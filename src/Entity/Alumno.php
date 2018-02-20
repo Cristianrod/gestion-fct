@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -81,4 +82,19 @@ class Alumno
      * @ORM\Column(type="string")
      */
     private $correo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ciclo", inversedBy="alumnos")
+     */
+    private $ciclo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="alumno")
+     */
+    private $fcts;
+
+    public function __construct()
+    {
+        $this->fcts = new ArrayCollection();
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -61,4 +62,14 @@ class Profesor
      * @ORM\Column(type="string")
      */
     private $correo;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="profesor")
+     */
+    private $fcts;
+
+    public function __construct()
+    {
+        $this->fcts = new ArrayCollection();
+    }
 }

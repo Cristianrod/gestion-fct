@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,4 +36,14 @@ class Ciclo
      * @ORM\Column(type="integer")
      */
     private $horas;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Alumno", mappedBy="ciclo")
+     */
+    private $alumnos;
+
+    public function __construct()
+    {
+        $this->alumnos = new ArrayCollection();
+    }
 }

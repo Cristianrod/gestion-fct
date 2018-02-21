@@ -40,4 +40,92 @@ class Fct
      * @ORM\ManyToOne(targetEntity="App\Entity\Empresa", inversedBy="fcts")
      */
     private $empresa;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAnio()
+    {
+        return $this->anio;
+    }
+
+    /**
+     * @param mixed $anio
+     */
+    public function setAnio($anio): void
+    {
+        $this->anio = $anio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPeriodo()
+    {
+        return $this->periodo;
+    }
+
+    /**
+     * @param mixed $periodo
+     */
+    public function setPeriodo($periodo): void
+    {
+        $this->periodo = $periodo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProfesor()
+    {
+        return $this->profesor;
+    }
+
+    /**
+     * @param mixed $profesor
+     */
+    public function setProfesor($profesor): void
+    {
+        $this->profesor = $profesor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlumno()
+    {
+        return $this->alumno;
+    }
+
+    /**
+     * @param mixed $alumno
+     */
+    public function setAlumno($alumno): void
+    {
+        $this->alumno = $alumno;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
+
+    /**
+     * @param mixed $empresa
+     */
+    public function setEmpresa($empresa): void
+    {
+        $this->empresa = $empresa;
+    }
 }

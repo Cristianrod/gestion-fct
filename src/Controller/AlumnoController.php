@@ -18,6 +18,6 @@ class AlumnoController extends Controller
 
     public function new(Request $request)
     {
-        
+
     }
 }

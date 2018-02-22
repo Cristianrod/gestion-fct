@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35e23e3-8503-4d16-ac0a-a726baf22529" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IncioController.php" afterPath="$PROJECT_DIR$/src/Controller/InicioController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlumnoController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlumnoController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="920">
+              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
                 <element signature="e#1171#1180#1#PHP" expanded="true" />
@@ -84,14 +84,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IncioController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/IncioController.php">
+      <file leaf-file-name="InicioController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/InicioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="540">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="e#34#94#0#PHP" expanded="true" />
-                <element signature="e#448#473#1#PHP" expanded="true" />
+                <element signature="e#449#474#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -476,12 +476,12 @@
       <workItem from="1519225137209" duration="3240000" />
       <workItem from="1519236252914" duration="1399000" />
       <workItem from="1519308108362" duration="9613000" />
-      <workItem from="1519320004709" duration="6532000" />
+      <workItem from="1519320004709" duration="6724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60390000" />
+    <option name="totallyTimeSpent" value="60582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -572,7 +572,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/postcss.config.js" />
     <entry file="file://$PROJECT_DIR$/src/Controller/inicio.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/inicioController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/InicioController.php" />
     <entry file="file://$PROJECT_DIR$/templates/default/inicio.html.twig" />
     <entry file="file://$PROJECT_DIR$/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -845,17 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/IncioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#34#94#0#PHP" expanded="true" />
-            <element signature="e#448#473#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -874,11 +863,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state relative-caret-position="920">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
             <element signature="e#1171#1180#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/InicioController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#94#0#PHP" expanded="true" />
+            <element signature="e#449#474#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

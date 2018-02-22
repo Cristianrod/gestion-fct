@@ -21,68 +21,86 @@ class Alumno
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\Regex("/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i")
+     * @Assert\Regex(
+     *     pattern="/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i",
+     *     message="valid.nif"
+     * )
      * @Assert\NotBlank()
      */
     private $nif;
 
     /**
-     * @ORM\Column(type="string")
+     * @Assert\Regex(
+     *     pattern="/[0-9]/",
+     *     match=false
+     * )
+     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=40)
      */
     private $nombre;
 
     /**
-     * @ORM\Column(type="string")
+     * @Assert\Regex(
+     *     pattern="/[0-9]/",
+     *     match=false
+     * )
+     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=40)
      */
     private $apellido1;
 
     /**
-     * @ORM\Column(type="string")
+     * * @Assert\Regex(
+     *     pattern="/[0-9]/",
+     *     match=false
+     * )
+     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=40)
      */
     private $apellido2;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $fotografia;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $usuario;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $direccion;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $poblacion;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $codpostal;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $provincia;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $movil;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $fijo;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $correo;
 

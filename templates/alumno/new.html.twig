@@ -2,8 +2,9 @@
 {% block body %}
     {% block container %}
         <div class="container mt-4">
-            {{ form_start(form) }}
+            {{ form_start(form, { attr: {novalidate: 'novalidate'}}) }}
                 {{ form_errors(form) }}
+                {{ form_row(form.nif) }}
                 {{ form_row(form.nombre) }}
                 {{ form_row(form.apellido1) }}
                 {{ form_row(form.apellido2) }}

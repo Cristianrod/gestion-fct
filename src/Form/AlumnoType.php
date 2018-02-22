@@ -13,17 +13,20 @@ class AlumnoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('nif', null, [
+                'label' => 'label.nif',
+            ])
             ->add('nombre', null, [
-                'label' => 'Nombre',
+                'label' => 'label.nombre',
             ])
             ->add('apellido1', null, [
-                'label' => 'Apellido 1'
+                'label' => 'label.apellido1'
             ])
             ->add('apellido2', null, [
-                'label' => 'Apellido 2'
+                'label' => 'label.apellido2'
             ])
             ->add('crear', SubmitType::class, [
-                'label' => 'Crear Alumno'
+                'label' => 'label.crearAlumno'
             ])
         ;
     }

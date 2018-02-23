@@ -22,6 +22,38 @@
                 <source>label.apellido2</source>
                 <target>Apellido 2</target>
             </trans-unit>
+            <trans-unit id="label.foto">
+                <source>label.foto</source>
+                <target>Fotografía</target>
+            </trans-unit>
+            <trans-unit id="label.direccion">
+                <source>label.direccion</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="label.poblacion">
+                <source>label.poblacion</source>
+                <target>Población</target>
+            </trans-unit>
+            <trans-unit id="label.codpostal">
+                <source>label.codpostal</source>
+                <target>Código Postal</target>
+            </trans-unit>
+            <trans-unit id="label.provincia">
+                <source>label.provincia</source>
+                <target>Provincia</target>
+            </trans-unit>
+            <trans-unit id="label.movil">
+                <source>label.movil</source>
+                <target>Móvil</target>
+            </trans-unit>
+            <trans-unit id="label.tlf">
+                <source>label.tlf</source>
+                <target>Tlf. Fijo</target>
+            </trans-unit>
+            <trans-unit id="label.correo">
+                <source>label.correo</source>
+                <target>Correo</target>
+            </trans-unit>
             <trans-unit id="label.crearAlumno">
                 <source>label.crearAlumno</source>
                 <target>Crear Alumno</target>

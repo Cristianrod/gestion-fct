@@ -3,9 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Alumno;
+use App\Entity\Provincia;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -35,28 +36,34 @@ class AlumnoType extends AbstractType
                 'label' => 'label.direccion',
             ])
             ->add('poblacion', null, [
-                'label' => 'label.poblacion'
+                'label' => 'label.poblacion',
             ])
             ->add('codpostal', null, [
-                'label' => 'label.codpostal'
+                'label' => 'label.codpostal',
             ])
-            ->add('provincia', null, [
-                'label' => 'label.provincia'
+            ->add('provincia', EntityType::class, [
+                'label' => 'label.provincia',
+                'class' => Provincia::class,
+                'query_builder' => function(EntityRepository $er){
+                    return $er->createQueryBuilder('p')
+                        ->orderBy('p.nombre', 'ASC');
+                },
+                'choice_label' => 'nombre',
             ])
             ->add('movil', null, [
-                'label' => 'label.movil'
+                'label' => 'label.movil',
             ])
             ->add('fijo', null, [
-                'label' => 'label.tlf'
+                'label' => 'label.tlf',
             ])
             ->add('correo', null, [
-                'label' => 'label.correo'
+                'label' => 'label.correo',
             ])
             ->add('crear', SubmitType::class, [
                 'label' => 'label.crearAlumno',
                 'attr' => [
                     'class' => 'btn btn-primary'
-                ]
+                ],
             ])
         ;
     }

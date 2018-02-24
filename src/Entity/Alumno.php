@@ -68,11 +68,6 @@ class Alumno
     private $fotografia;
 
     /**
-     * @ORM\Column(type="string")
-     */
-    private $usuario;
-
-    /**
      * @ORM\Column(type="string", nullable=true)
      */
     private $direccion;
@@ -88,12 +83,13 @@ class Alumno
     private $codpostal;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Provincia", inversedBy="alumnos")
      */
     private $provincia;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $movil;
 
@@ -104,6 +100,7 @@ class Alumno
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $correo;
 

@@ -37,7 +37,7 @@ class Alumno
      *     match=false
      * )
      * @Assert\NotBlank()
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=50)
      */
     private $nombre;
 
@@ -47,7 +47,7 @@ class Alumno
      *     match=false
      * )
      * @Assert\NotBlank()
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=50)
      */
     private $apellido1;
 
@@ -57,7 +57,7 @@ class Alumno
      *     match=false
      * )
      * @Assert\NotBlank()
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=50)
      */
     private $apellido2;
 
@@ -68,16 +68,24 @@ class Alumno
     private $fotografia;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true, length=100)
      */
     private $direccion;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=true, length=100)
      */
     private $poblacion;
 
     /**
+     * @Assert\Regex(
+     *     pattern="/(0[1-9]|5[0-2]|[0-4][0-9])[0-9]{3}/i",
+     *     message="valid.cpostal"
+     * )
+     * @Assert\Length(
+     *     max="5",
+     *     min="5"
+     * )
      * @ORM\Column(type="string", nullable=true)
      */
     private $codpostal;
@@ -90,16 +98,27 @@ class Alumno
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern="/^(\+34|0034|34)?[6|7][0-9]{8}$/",
+     *     message="valid.movil"
+     * )
      */
     private $movil;
 
     /**
      * @ORM\Column(type="string", nullable=true)
+     * @Assert\Regex(
+     *     pattern="/^(\+34|0034|34)?[6|7][0-9]{8}$/",
+     *     message="valid.fijo"
+     * )
      */
     private $fijo;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=100)
+     * @Assert\Email(
+     *     message="valid.correo"
+     * )
      * @Assert\NotBlank()
      */
     private $correo;

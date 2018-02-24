@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Alumno;
 use App\Form\AlumnoType;
+use App\Repository\AlumnoRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,9 +22,12 @@ class AlumnoController extends Controller
      * @Route("/", name="alumnos")
      * @return Response
      */
-    public function index(): Response
+    public function index(AlumnoRepository $alumnos): Response
     {
-        return $this->render("alumno/index.html.twig");
+        $alumnos = $alumnos->findByNombre();
+        return $this->render("alumno/index.html.twig",[
+            'alumnos' => $alumnos
+        ]);
     }
 
     /**

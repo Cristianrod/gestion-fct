@@ -6,6 +6,10 @@
                 <source>nav.inicio</source>
                 <target>Inicio</target>
             </trans-unit>
+            <trans-unit id="nav.alumnos">
+                <source>nav.alumnos</source>
+                <target>Alumnos</target>
+            </trans-unit>
             <trans-unit id="label.nif">
                 <source>label.nif</source>
                 <target>NIF</target>

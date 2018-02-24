@@ -13,16 +13,13 @@ class AlumnoRepository extends ServiceEntityRepository
         parent::__construct($registry, Alumno::class);
     }
 
-    /*
-    public function findBySomething($value)
+
+    public function findByNombre()
     {
         return $this->createQueryBuilder('a')
-            ->where('a.something = :value')->setParameter('value', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('a.nombre', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 }

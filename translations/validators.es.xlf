@@ -6,6 +6,22 @@
                 <source>valid.nif</source>
                 <target>El NIF introducido no es correcto</target>
             </trans-unit>
+            <trans-unit id="valid.cpostal">
+                <source>valid.cpostal</source>
+                <target>El Código Postal introducido no es correcto</target>
+            </trans-unit>
+            <trans-unit id="valid.fijo">
+                <source>valid.fijo</source>
+                <target>El Teléfono Fijo introducido no es correcto</target>
+            </trans-unit>
+            <trans-unit id="valid.movil">
+                <source>valid.fijo</source>
+                <target>El Móvil introducido no es correcto</target>
+            </trans-unit>
+            <trans-unit id="valid.correo">
+                <source>valid.correo</source>
+                <target>El Correo introducido no es correcto</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

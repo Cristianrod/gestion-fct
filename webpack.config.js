@@ -9,7 +9,9 @@ Encore
     // .enableVersioning(Encore.isProduction())
     .addEntry('js/app', './assets/js/app.js')
     .addStyleEntry('css/app', './assets/css/app.scss')
-    .enableSassLoader()
+    .enableSassLoader(function(sassOptions) {}, {
+        resolveUrlLoader: false
+    })
     .enablePostCssLoader()
     .autoProvidejQuery()
     .autoProvideVariables({ Popper: 'popper.js' })

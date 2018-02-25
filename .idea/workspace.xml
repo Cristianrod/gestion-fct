@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35e23e3-8503-4d16-ac0a-a726baf22529" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" afterPath="$PROJECT_DIR$/assets/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AlumnoController.php" afterPath="$PROJECT_DIR$/src/Controller/AlumnoController.php" />
-      <change beforePath="$PROJECT_DIR$/templates/alumno/index.html.twig" afterPath="$PROJECT_DIR$/templates/alumno/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1080">
-              <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+              <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -84,11 +82,8 @@
         <entry file="file://$PROJECT_DIR$/templates/alumno/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="720">
-              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-                <element signature="e#1116#1128#0#Twig" expanded="true" />
-              </folding>
+              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,7 +91,7 @@
       <file leaf-file-name="AlumnoRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/AlumnoRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="120">
               <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
               <folding />
             </state>
@@ -106,23 +101,29 @@
       <file leaf-file-name="AlumnoController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
+            <state relative-caret-position="1950">
               <caret line="72" column="10" lean-forward="false" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-              <folding>
-                <element signature="e#1809#1832#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/alumno/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="10" column="113" lean-forward="false" selection-start-line="10" selection-start-column="113" selection-end-line="10" selection-end-column="113" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="13" column="124" lean-forward="false" selection-start-line="13" selection-start-column="124" selection-end-line="13" selection-end-column="124" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-              </folding>
+              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,7 +143,7 @@
       <file leaf-file-name="InicioController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/InicioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="300">
               <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding>
                 <element signature="e#34#94#0#PHP" expanded="true" />
@@ -180,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/Controller/PruebaController.php" />
         <option value="$PROJECT_DIR$/src/Kernel.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/assets/css/app.scss" />
         <option value="$PROJECT_DIR$/postcss.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -212,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/Controller/AlumnoController.php" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/templates/alumno/show.html.twig" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -320,7 +321,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -383,8 +384,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -446,16 +445,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="SearchEverywhereHistoryKey" value="symfon&#9;FILE&#9;file://D:/Virtualizaciones/Proyectos/servidor/symfony.lock&#10;Bundles&#9;FILE&#9;file://D:/Virtualizaciones/Proyectos/servidor/config/bundles.php" />
+    <property name="SearchEverywhereHistoryKey" value="webpack&#9;FILE&#9;file://D:/Virtualizaciones/Proyectos/servidor/webpack.config.js&#10;symfon&#9;FILE&#9;file://D:/Virtualizaciones/Proyectos/servidor/symfony.lock&#10;Bundles&#9;FILE&#9;file://D:/Virtualizaciones/Proyectos/servidor/config/bundles.php" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -506,16 +507,18 @@
       <workItem from="1519486688516" duration="62000" />
       <workItem from="1519486769634" duration="9331000" />
       <workItem from="1519582026561" duration="7655000" />
+      <workItem from="1519593206389" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80063000" />
+    <option name="totallyTimeSpent" value="80669000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23322684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -597,13 +600,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3958ba20-c80d-485f-a447-03b1c7955f76/console.sql" />
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/3958ba20-c80d-485f-a447-03b1c7955f76">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -651,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/InicioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="300">
           <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
             <element signature="e#34#94#0#PHP" expanded="true" />
@@ -844,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/AlumnoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
+        <state relative-caret-position="120">
           <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding />
         </state>
@@ -852,11 +846,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
+        <state relative-caret-position="1950">
           <caret line="72" column="10" lean-forward="false" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="e#1809#1832#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -874,14 +866,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
-          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -897,21 +888,24 @@
     <entry file="file://$PROJECT_DIR$/templates/alumno/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#1116#1128#0#Twig" expanded="true" />
-          </folding>
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/alumno/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="113" lean-forward="false" selection-start-line="10" selection-start-column="113" selection-end-line="10" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="13" column="124" lean-forward="false" selection-start-line="13" selection-start-column="124" selection-end-line="13" selection-end-column="124" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

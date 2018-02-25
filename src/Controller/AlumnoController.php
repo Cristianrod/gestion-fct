@@ -34,7 +34,6 @@ class AlumnoController extends Controller
 
     /**
      * @Route("/nuevo", name="alumnos_new")
-     * @Method("POST")
      * @param Request $request
      * @return Response
      */

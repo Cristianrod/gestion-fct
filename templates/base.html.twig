@@ -28,7 +28,13 @@
             </nav>
         {% endblock %}
         {% block body %}
-            {% block container %}{% endblock %}
+            <div class="container">
+                <div class="row mt-2">
+                    <div class="col">
+                        {% block container %}{% endblock %}
+                    </div>
+                </div>
+            </div>
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('build/manifest.js') }}"></script>

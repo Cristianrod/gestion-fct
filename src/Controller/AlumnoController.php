@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Alumno;
 use App\Form\AlumnoType;
 use App\Repository\AlumnoRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,6 +21,7 @@ class AlumnoController extends Controller
 
     /**
      * @Route("/", name="alumnos")
+     * @param AlumnoRepository $alumnos
      * @return Response
      */
     public function index(AlumnoRepository $alumnos): Response
@@ -32,6 +34,7 @@ class AlumnoController extends Controller
 
     /**
      * @Route("/nuevo", name="alumnos_new")
+     * @Method("POST")
      * @param Request $request
      * @return Response
      */
@@ -55,5 +58,18 @@ class AlumnoController extends Controller
             'form' => $form->createView()
         ]);
 
+    }
+
+    /**
+     * @Route("/{id}", name="alumnos_show")
+     * @Method("GET")
+     * @param Alumno $alumno
+     * @return Response
+     */
+    public function show(Alumno $alumno): Response
+    {
+        return $this->render('alumno/show.html.twig', [
+            'alumno' => $alumno,
+        ]);
     }
 }

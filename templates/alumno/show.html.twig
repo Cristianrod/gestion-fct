@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ver - Alumnos{% endblock %}
+{% block body %}
+    {% block container %}
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 mb-2">
+                    <img src="{{ asset('build/images/user.png') }}" class="rounded mx-auto d-block">
+                </div>
+                <ul class="list-group col-sm-12 col-md-6 mb-2">
+                    <li class="list-group-item text-light bg-primary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-info-circle"></i> Datos Personales</h3></li>
+                    <li class="list-group-item"><span class="font-weight-bold">NIF:</span> {{ alumno.nif }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Nombre:</span> {{ alumno.nombre }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Apellidos:</span> {{ alumno.apellido1 ~ ' ' ~ alumno.apellido2 }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Provincia:</span> {{ alumno.provincia.nombre }}</li>
+                </ul>
+                <ul class="list-group col-sm-12 col-md-6 mb-2">
+                    <li class="list-group-item text-light bg-secondary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-map-marker-alt"></i> Localización</h3></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Dirección:</span> {{ alumno.direccion|default('Sin datos') }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Población:</span> {{ alumno.poblacion|default('Sin datos') }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Código Postal:</span> {{ alumno.codpostal|default('Sin datos') }}</li>
+                </ul>
+                <ul class="list-group col-sm-12 col-md-6">
+                    <li class="list-group-item text-light bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"> <i class="fas fa-address-card"></i> Contacto</h3></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Móvil:</span> {{ alumno.movil }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Tlf. Fijo:</span> {{ alumno.fijo|default('Sin datos') }}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Correo:</span> {{ alumno.correo }}</li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

@@ -29,7 +29,7 @@ class AlumnoType extends AbstractType
             ->add('apellido2', null, [
                 'label' => 'label.apellido2',
             ])
-            ->add('fotografia', FileType::class, [
+            ->add('fichero', FileType::class, [
                 'label' => 'label.foto',
             ])
             ->add('direccion', null, [

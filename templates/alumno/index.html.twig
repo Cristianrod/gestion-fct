@@ -5,6 +5,7 @@
         <table class="table table-bordered table-hover">
             <thead>
             <tr class="text-center">
+                <th scope="col">Fotografía</th>
                 <th scope="col">NIF</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellidos</th>
@@ -13,18 +14,19 @@
             </tr>
             </thead>
             <tbody>
-            {% for alumno in alumnos %}
-                <tr class="text-center">
-                    <th scope="row">{{ alumno.nif }}</th>
-                    <td>{{ alumno.nombre }}</td>
-                    <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
-                    <td>{{ alumno.correo }}</td>
-                    <td><a role="button" href="{{ path('alumnos_show', {'id': alumno.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
-                        <a role="button" href="{{ path('alumnos_edit', {'id': alumno.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
-                        <a role="button" href="{{ path('alumnos_delete', {'id': alumno.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
-                    </td>
-                </tr>
-            {% endfor %}
+                {% for alumno in alumnos %}
+                    <tr class="text-center">
+                        <td><img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded img-fluid foto-mini"></td>
+                        <th scope="row">{{ alumno.nif }}</th>
+                        <td>{{ alumno.nombre }}</td>
+                        <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
+                        <td>{{ alumno.correo }}</td>
+                        <td><a role="button" href="{{ path('alumnos_show', {'id': alumno.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
+                            <a role="button" href="{{ path('alumnos_edit', {'id': alumno.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                            <a role="button" href="{{ path('alumnos_delete', {'id': alumno.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

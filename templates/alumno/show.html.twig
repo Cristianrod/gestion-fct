@@ -3,7 +3,7 @@
 {% block container %}
     <div class="row">
         <div class="col-sm-12 col-md-6 mb-2">
-            <img src="{{ asset('build/images/user.png') }}" class="rounded mx-auto d-block">
+            <img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded mx-auto d-block">
         </div>
         <ul class="list-group col-sm-12 col-md-6 mb-2">
             <li class="list-group-item text-light bg-primary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-info-circle"></i> Datos Personales</h3></li>

@@ -5,12 +5,15 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AlumnoRepository")
  * @ORM\Table(name="alumnos")
  * @UniqueEntity("nif")
+ * @Vich\Uploadable
  */
 class Alumno
 {
@@ -63,9 +66,38 @@ class Alumno
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\Image()
      */
     private $fotografia;
+
+    /**
+     * @Vich\UploadableField(mapping="alumnos_foto", fileNameProperty="fotografia")
+     * @Assert\Image()
+     */
+    private $fichero;
+
+    /**
+     * @return mixed
+     */
+    public function getFichero(): ?File
+    {
+        return $this->fichero;
+    }
+
+    /**
+     * @param null $foto
+     */
+    public function setFichero($foto = null): void
+    {
+        $this->fichero = $foto;
+        if (null !== $foto) {
+            $this->fechaSubida = new \DateTimeImmutable();
+        }
+    }
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $fechaSubida;
 
     /**
      * @ORM\Column(type="string", nullable=true, length=100)

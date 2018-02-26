@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Profesor;
 use App\Form\ProfesorType;
+use App\Repository\ProfesorRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -19,11 +20,15 @@ class ProfesorController extends Controller
 {
     /**
      * @Route("/", name="profesores")
+     * @param ProfesorRepository $profesores
      * @return Response
      */
-    public function index(): Response
+    public function index(ProfesorRepository $profesores): Response
     {
-        return $this->render('profesor/index.html.twig');
+        $profesores = $profesores->findByNombre();
+        return $this->render('profesor/index.html.twig', [
+            'profesores' => $profesores,
+        ]);
     }
 
     /**

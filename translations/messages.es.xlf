@@ -78,6 +78,10 @@
                 <source>label.crearProfesor</source>
                 <target>Crear Profesor</target>
             </trans-unit>
+            <trans-unit id="label.editarProfesor">
+                <source>label.editarProfesor</source>
+                <target>Editar Profesor</target>
+            </trans-unit>
             <trans-unit id="flash.creadoA">
                 <source>flash.creadoA</source>
                 <target>Alumno creado correctamente.</target>
@@ -86,9 +90,21 @@
                 <source>flash.editA</source>
                 <target>Alumno editado correctamente.</target>
             </trans-unit>
+            <trans-unit id="flash.borrarA">
+                <source>flash.borrarA</source>
+                <target>Alumno eliminado correctamente.</target>
+            </trans-unit>
             <trans-unit id="flash.creadoP">
                 <source>flash.creadoP</source>
                 <target>Profesor creado correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.editP">
+                <source>flash.editP</source>
+                <target>Profesor editado correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.borrarP">
+                <source>flash.borrarP</source>
+                <target>Profesor eliminado correctamente.</target>
             </trans-unit>
         </body>
     </file>

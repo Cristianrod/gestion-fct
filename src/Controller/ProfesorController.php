@@ -92,10 +92,44 @@ class ProfesorController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($profesor);
             $em->flush();
+            $this->addFlash('success', 'flash.borrarP');
             return $this->redirectToRoute('profesores');
         }
         return $this->render('profesor/delete.html.twig', [
                 'profesor' => $profesor,
             ]);
+    }
+
+    /**
+     * @Route("/editar/{id}", name="profesores_edit")
+     * @param Request $request
+     * @param Profesor $profesor
+     * @return Response
+     */
+    public function edit(Request $request, Profesor $profesor): Response
+    {
+        $form = $this->createForm(ProfesorType::class, $profesor)
+            ->add('editar', SubmitType::class, [
+                'label' => 'label.editarProfesor',
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ]
+            ]);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->flush();
+
+            $this->addFlash('success', 'flash.editP');
+            return $this->redirectToRoute('profesores');
+        }
+
+        return $this->render('profesor/edit.html.twig',[
+            'profesor' => $profesor,
+            'form' => $form->createView(),
+        ]);
     }
 }

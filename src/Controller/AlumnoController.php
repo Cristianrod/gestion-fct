@@ -95,6 +95,7 @@ class AlumnoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($alumno);
             $em->flush();
+            $this->addFlash('success', 'flash.borrarA');
             return $this->redirectToRoute('alumnos');
         }
         return $this->render('alumno/delete.html.twig',[

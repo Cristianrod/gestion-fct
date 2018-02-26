@@ -65,4 +65,16 @@ class ProfesorController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="profesores_show")
+     * @param Profesor $profesor
+     * @return Response
+     */
+    public function show(Profesor $profesor): Response
+    {
+        return $this->render('profesor/show.html.twig', [
+           'profesor' => $profesor,
+        ]);
+    }
 }

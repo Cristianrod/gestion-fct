@@ -3,7 +3,7 @@
 {% block container %}
     <div class="row">
         <div class="col-sm-12 col-md-6 mb-2">
-            <img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded mx-auto d-block">
+            <img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded mx-auto d-block foto-perfil">
         </div>
         <ul class="list-group col-sm-12 col-md-6 mb-2">
             <li class="list-group-item text-light bg-primary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-info-circle"></i> Datos Personales</h3></li>
@@ -12,13 +12,13 @@
             <li class="list-group-item"><span class="font-weight-bold">Apellidos:</span> {{ alumno.apellido1 }} {{ alumno.apellido2 }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Provincia:</span> {{ alumno.provincia.nombre }}</li>
         </ul>
-        <ul class="list-group col-sm-12 col-md-6 mb-2">
+        <ul class="list-group col-sm-12 col-md-6 mt-2">
             <li class="list-group-item text-light bg-secondary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-map-marker-alt"></i> Localización</h3></li>
             <li class="list-group-item"><span class="font-weight-bold">Dirección:</span> {{ alumno.direccion|default('Sin datos') }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Población:</span> {{ alumno.poblacion|default('Sin datos') }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Código Postal:</span> {{ alumno.codpostal|default('Sin datos') }}</li>
         </ul>
-        <ul class="list-group col-sm-12 col-md-6">
+        <ul class="list-group col-sm-12 col-md-6 mt-2">
             <li class="list-group-item text-light bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"> <i class="fas fa-address-card"></i> Contacto</h3></li>
             <li class="list-group-item"><span class="font-weight-bold">Móvil:</span> {{ alumno.movil }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Tlf. Fijo:</span> {{ alumno.fijo|default('Sin datos') }}</li>

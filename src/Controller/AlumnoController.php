@@ -8,6 +8,7 @@ use App\Repository\AlumnoRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -41,7 +42,13 @@ class AlumnoController extends Controller
     {
         $alumno = new Alumno();
 
-        $form = $this->createForm(AlumnoType::class, $alumno);
+        $form = $this->createForm(AlumnoType::class, $alumno)
+            ->add('crear', SubmitType::class, [
+                'label' => 'label.crearAlumno',
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                ],
+            ]);
 
         $form->handleRequest($request);
 
@@ -69,6 +76,58 @@ class AlumnoController extends Controller
     {
         return $this->render('alumno/show.html.twig', [
             'alumno' => $alumno,
+        ]);
+    }
+
+    /**
+     * @Route("/eliminar/{id}", name="alumnos_delete")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param Alumno $alumno
+     * @return Response
+     */
+    public function delete(Request $request, Alumno $alumno): Response
+    {
+        if ($request->isMethod('POST')){
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($alumno);
+            $em->flush();
+            return $this->redirectToRoute('alumnos');
+        }
+        return $this->render('alumno/delete.html.twig',[
+           'alumno' => $alumno,
+        ]);
+    }
+
+    /**
+     * @Route("/editar/{id}", name="alumnos_edit")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param Alumno $alumno
+     * @return Response
+     */
+    public function edit(Request $request, Alumno $alumno): Response
+    {
+        $form = $this->createForm(AlumnoType::class, $alumno)
+            ->add('editar', SubmitType::class, [
+                'label' => 'label.editarAlumno',
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ],
+            ]);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->flush();
+
+            return $this->redirectToRoute('alumnos');
+        }
+        return $this->render('alumno/edit.html.twig',[
+            'alumno' => $alumno,
+            'form' => $form->createView(),
         ]);
     }
 }

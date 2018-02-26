@@ -59,12 +59,6 @@ class AlumnoType extends AbstractType
             ->add('correo', null, [
                 'label' => 'label.correo',
             ])
-            ->add('crear', SubmitType::class, [
-                'label' => 'label.crearAlumno',
-                'attr' => [
-                    'class' => 'btn btn-primary'
-                ],
-            ])
         ;
     }
 

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Eliminar - Alumnos{% endblock %}
+{% block container %}
+    <div class="row">
+            <div class="card col-sm-4 m-auto">
+                <img class="card-img-top" src="{{ asset('build/images/user.png') }}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">¿Desea eliminar al alumno {{ alumno.nombre }} {{ alumno.apellido1 }} {{ alumno.apellido2 }}?</p>
+                    <div class="text-center">
+                        <form action="{{ path('alumnos_delete', {'id': alumno.id}) }}" method="POST">
+                            <button type="submit" class="btn btn-danger mb-2 d-inline-block col-sm-12">Eliminar</button>
+                        </form>
+                        <a role="button" href="{{ path('alumnos') }}" class="btn btn-secondary col-sm-12">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}

@@ -2,13 +2,12 @@
 {% block title %}Incio - Alumnos{% endblock %}
 {% block container %}
     <div class="row">
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
             <tr class="text-center">
                 <th scope="col">NIF</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">1º Apellido</th>
-                <th scope="col">2º Apellido</th>
+                <th scope="col">Apellidos</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -18,12 +17,11 @@
                 <tr class="text-center">
                     <th scope="row">{{ alumno.nif }}</th>
                     <td>{{ alumno.nombre }}</td>
-                    <td>{{ alumno.apellido1 }}</td>
-                    <td>{{ alumno.apellido2 }}</td>
+                    <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
                     <td>{{ alumno.correo }}</td>
-                    <td><button class="btn btn-primary mr-1"><a href="{{ path('alumnos_show', {'id': alumno.id}) }}"><i class="fas fa-user"></i></a></button>
-                        <button class="btn btn-success mr-1"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    <td><a role="button" href="{{ path('alumnos_show', {'id': alumno.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
+                        <a role="button" href="{{ path('alumnos_edit', {'id': alumno.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                        <a role="button" href="{{ path('alumnos_delete', {'id': alumno.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             {% endfor %}

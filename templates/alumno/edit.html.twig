@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block title %}Nuevo - Alumnos{% endblock %}
+{% block title %}Editar - Alumnos{% endblock %}
 {% block container %}
     <div class="row">
         <div class="col-md-12">
             {{ form_start(form, { attr: {novalidate: 'novalidate'}}) }}
-                {{ form_errors(form) }}
-                {{ form_widget(form) }}
+            {{ form_errors(form) }}
+            {{ form_widget(form) }}
             {{ form_end(form) }}
         </div>
     </div>

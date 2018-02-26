@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Profesor;
 use App\Form\ProfesorType;
 use App\Repository\ProfesorRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -76,5 +77,25 @@ class ProfesorController extends Controller
         return $this->render('profesor/show.html.twig', [
            'profesor' => $profesor,
         ]);
+    }
+
+    /**
+     * @Route("/eliminar/{id}", name="profesores_delete")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param Profesor $profesor
+     * @return Response
+     */
+    public function delete(Request $request, Profesor $profesor): Response
+    {
+        if ($request->isMethod('POST')){
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($profesor);
+            $em->flush();
+            return $this->redirectToRoute('profesores');
+        }
+        return $this->render('profesor/delete.html.twig', [
+                'profesor' => $profesor,
+            ]);
     }
 }

@@ -3,7 +3,7 @@
 {% block container %}
     <div class="row">
             <div class="card col-sm-4 m-auto">
-                <img class="card-img-top" src="{{ asset('build/images/user.png') }}" alt="Card image cap">
+                <img class="card-img-top" src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text">¿Desea eliminar al alumno {{ alumno.nombre }} {{ alumno.apellido1 }} {{ alumno.apellido2 }}?</p>
                     <div class="text-center">

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Eliminar - Profesores{% endblock %}
+{% block container %}
+    <div class="row">
+        <div class="card col-sm-4 m-auto">
+            <img class="card-img-top" src="{{ asset(profesor.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/profesores/' ~ profesor.fotografia) }}" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text">¿Desea eliminar al profesor {{ profesor.nombre }} {{ profesor.apellido1 }} {{ profesor.apellido2 }}?</p>
+                <div class="text-center">
+                    <form action="{{ path('profesores_delete', {'id': profesor.id}) }}" method="POST">
+                        <button type="submit" class="btn btn-danger mb-2 d-inline-block col-sm-12">Eliminar</button>
+                    </form>
+                    <a role="button" href="{{ path('profesores') }}" class="btn btn-secondary col-sm-12">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -10,6 +10,10 @@
                 <source>nav.alumnos</source>
                 <target>Alumnos</target>
             </trans-unit>
+            <trans-unit id="nav.profesores">
+                <source>nav.profesores</source>
+                <target>Profesores</target>
+            </trans-unit>
             <trans-unit id="label.nif">
                 <source>label.nif</source>
                 <target>NIF</target>
@@ -58,6 +62,10 @@
                 <source>label.correo</source>
                 <target>Correo</target>
             </trans-unit>
+            <trans-unit id="label.usuario">
+                <source>label.usuario</source>
+                <target>Usuario</target>
+            </trans-unit>
             <trans-unit id="label.crearAlumno">
                 <source>label.crearAlumno</source>
                 <target>Crear Alumno</target>
@@ -65,6 +73,22 @@
             <trans-unit id="label.editarAlumno">
                 <source>label.editarAlumno</source>
                 <target>Editar Alumno</target>
+            </trans-unit>
+            <trans-unit id="label.crearProfesor">
+                <source>label.crearProfesor</source>
+                <target>Crear Profesor</target>
+            </trans-unit>
+            <trans-unit id="flash.creadoA">
+                <source>flash.creadoA</source>
+                <target>Alumno creado correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.editA">
+                <source>flash.editA</source>
+                <target>Alumno editado correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.creadoP">
+                <source>flash.creadoP</source>
+                <target>Profesor creado correctamente.</target>
             </trans-unit>
         </body>
     </file>

@@ -229,22 +229,6 @@ class Alumno
     /**
      * @return mixed
      */
-    public function getUsuario()
-    {
-        return $this->usuario;
-    }
-
-    /**
-     * @param mixed $usuario
-     */
-    public function setUsuario($usuario): void
-    {
-        $this->usuario = $usuario;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getDireccion()
     {
         return $this->direccion;

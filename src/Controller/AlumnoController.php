@@ -54,9 +54,10 @@ class AlumnoController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $alumno = $form->getData();
-             $em = $this->getDoctrine()->getManager();
-             $em->persist($alumno);
-             $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($alumno);
+            $em->flush();
+            $this->addFlash('success', 'flash.creadoA');
             return $this->redirectToRoute('alumnos');
         }
 
@@ -123,6 +124,7 @@ class AlumnoController extends Controller
 
             $em->flush();
 
+            $this->addFlash('success', 'flash.editA');
             return $this->redirectToRoute('alumnos');
         }
         return $this->render('alumno/edit.html.twig',[

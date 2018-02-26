@@ -23,9 +23,10 @@ class ProfesorController extends Controller
      * @param ProfesorRepository $profesores
      * @return Response
      */
-    public function index(ProfesorRepository $profesores): Response
+    public function index(Request $request, ProfesorRepository $profesores): Response
     {
-        $profesores = $profesores->findByNombre();
+        $pagina = $request->query->getInt('p', 1);
+        $profesores = $profesores->findByNombre($pagina);
         return $this->render('profesor/index.html.twig', [
             'profesores' => $profesores,
         ]);

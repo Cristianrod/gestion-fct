@@ -4,6 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Alumno;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class AlumnoRepository extends ServiceEntityRepository
@@ -14,12 +17,21 @@ class AlumnoRepository extends ServiceEntityRepository
     }
 
 
-    public function findByNombre()
+    public function findByNombre(int $pagina): Pagerfanta
     {
-        return $this->createQueryBuilder('a')
+        $query = $this->createQueryBuilder('a')
             ->orderBy('a.nombre', 'ASC')
             ->getQuery()
-            ->getResult()
         ;
+        return $this->paginacion($query, $pagina);
+    }
+
+    public function paginacion(Query $query, int $pagina)
+    {
+        $paginacion = new Pagerfanta(new DoctrineORMAdapter($query));
+        $paginacion = $paginacion->setMaxPerPage(4);
+        $paginacion = $paginacion->setCurrentPage($pagina);
+
+        return $paginacion;
     }
 }

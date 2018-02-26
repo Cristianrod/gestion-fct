@@ -22,12 +22,14 @@ class AlumnoController extends Controller
 
     /**
      * @Route("/", name="alumnos")
+     * @param Request $request
      * @param AlumnoRepository $alumnos
      * @return Response
      */
-    public function index(AlumnoRepository $alumnos): Response
+    public function index(Request $request, AlumnoRepository $alumnos): Response
     {
-        $alumnos = $alumnos->findByNombre();
+        $pagina = $request->query->getInt('p', 1);
+        $alumnos = $alumnos->findByNombre($pagina);
         return $this->render("alumno/index.html.twig",[
             'alumnos' => $alumnos
         ]);

@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}Incio - Alumnos{% endblock %}
 {% block container %}
-    <div class="row">
         <table class="table table-bordered table-hover">
             <thead>
             <tr class="text-center">
@@ -29,5 +28,9 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
+        {% if alumnos.haveToPaginate %}
+            <nav>
+                {{ pagerfanta(alumnos, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
+            </nav>
+        {% endif %}
 {% endblock %}

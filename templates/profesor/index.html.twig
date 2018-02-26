@@ -1,33 +1,36 @@
 {% extends 'base.html.twig' %}
 {% block title %}Incio - Profesores{% endblock %}
 {% block container %}
-    <div class="row">
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr class="text-center">
-                <th scope="col">Fotografía</th>
-                <th scope="col">NIF</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for profesor in profesores %}
-                    <tr class="text-center">
-                        <td><img src="{{ asset(profesor.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/profesores/' ~ profesor.fotografia) }}" class="rounded img-fluid foto-mini"></td>
-                        <th scope="row">{{ profesor.nif }}</th>
-                        <td>{{ profesor.nombre }}</td>
-                        <td>{{ profesor.apellido1 }} {{ profesor.apellido2 }}</td>
-                        <td>{{ profesor.correo }}</td>
-                        <td><a role="button" href="" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
-                            <a role="button" href="" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
-                            <a role="button" href="" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">Fotografía</th>
+            <th scope="col">NIF</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for profesor in profesores %}
+                <tr class="text-center">
+                    <td><img src="{{ asset(profesor.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/profesores/' ~ profesor.fotografia) }}" class="rounded img-fluid foto-mini"></td>
+                    <th scope="row">{{ profesor.nif }}</th>
+                    <td>{{ profesor.nombre }}</td>
+                    <td>{{ profesor.apellido1 }} {{ profesor.apellido2 }}</td>
+                    <td>{{ profesor.correo }}</td>
+                    <td><a role="button" href="" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
+                        <a role="button" href="" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                        <a role="button" href="" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if profesores.haveToPaginate %}
+        <nav>
+            {{ pagerfanta(profesores, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
+        </nav>
+    {% endif %}
 {% endblock %}

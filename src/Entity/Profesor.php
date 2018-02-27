@@ -133,6 +133,34 @@ class Profesor
     private $correo;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Ciclo", inversedBy="profesores")
+     * @ORM\JoinTable(name="profesor_ciclo")
+     */
+    private $ciclos;
+
+    /**
+     * @return mixed
+     */
+    public function getCiclos()
+    {
+        return $this->ciclos;
+    }
+
+    public function addCiclo(Ciclo ...$ciclos)
+    {
+        foreach ($ciclos as $ciclo){
+            if (!$this->ciclos->contains($ciclo)){
+                $this->ciclos->add($ciclo);
+            }
+        }
+    }
+
+    public function removeCiclo(Ciclo $ciclo)
+    {
+        $this->ciclos->removeElement($ciclo);
+    }
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="profesor")
      */
     private $fcts;
@@ -140,6 +168,7 @@ class Profesor
     public function __construct()
     {
         $this->fcts = new ArrayCollection();
+        $this->ciclos = new ArrayCollection();
     }
 
     public function getFcts()

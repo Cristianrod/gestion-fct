@@ -42,6 +42,27 @@ class Fct
     private $empresa;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ciclo", inversedBy="fcts")
+     */
+    private $ciclo;
+
+    /**
+     * @return mixed
+     */
+    public function getCiclo()
+    {
+        return $this->ciclo;
+    }
+
+    /**
+     * @param mixed $ciclo
+     */
+    public function setCiclo($ciclo): void
+    {
+        $this->ciclo = $ciclo;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()

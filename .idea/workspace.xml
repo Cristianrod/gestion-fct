@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35e23e3-8503-4d16-ac0a-a726baf22529" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/EmpresaController.php" afterPath="$PROJECT_DIR$/src/Controller/EmpresaController.php" />
-      <change beforePath="$PROJECT_DIR$/templates/alumno/show.html.twig" afterPath="$PROJECT_DIR$/templates/alumno/show.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/empresa/index.html.twig" afterPath="$PROJECT_DIR$/templates/empresa/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/profesor/show.html.twig" afterPath="$PROJECT_DIR$/templates/profesor/show.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Empresa.php" afterPath="$PROJECT_DIR$/src/Entity/Empresa.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,21 +119,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/profesor/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+            <state relative-caret-position="90">
+              <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Empresa.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Empresa.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/Empresa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+            <state relative-caret-position="390">
+              <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -205,12 +202,12 @@
         <option value="$PROJECT_DIR$/src/Form/EmpresaType.php" />
         <option value="$PROJECT_DIR$/translations/messages.es.xlf" />
         <option value="$PROJECT_DIR$/templates/empresa/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Empresa.php" />
         <option value="$PROJECT_DIR$/src/Controller/EmpresaController.php" />
         <option value="$PROJECT_DIR$/templates/empresa/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/empresa/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/alumno/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/profesor/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Empresa.php" />
       </list>
     </option>
   </component>
@@ -522,16 +519,15 @@
       <workItem from="1519655712952" duration="7714000" />
       <workItem from="1519665537335" duration="8605000" />
       <workItem from="1519686156204" duration="2196000" />
-      <workItem from="1519740213345" duration="8314000" />
+      <workItem from="1519740213345" duration="8641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117850000" />
+    <option name="totallyTimeSpent" value="118177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24678801" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -796,14 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Alumno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5625">
-          <caret line="323" column="0" lean-forward="true" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/d9beafe1/3b5a00be-4321-4a57-8ecd-1a015b038e73/gestionfct.empresas">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -854,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Empresa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EmpresaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -904,8 +884,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/profesor/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        <state relative-caret-position="90">
+          <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Alumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Empresa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
           <folding />
         </state>
       </provider>

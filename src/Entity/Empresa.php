@@ -60,7 +60,15 @@ class Empresa
     private $poblacion;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Regex(
+     *     pattern="/(0[1-9]|5[0-2]|[0-4][0-9])[0-9]{3}/i",
+     *     message="valid.cpostal"
+     * )
+     * @Assert\Length(
+     *     max="5",
+     *     min="5"
+     * )
+     * @ORM\Column(type="string", nullable=true)
      */
     private $codpostal;
 

@@ -80,7 +80,7 @@ class Empresa
     private $movil;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Assert\Regex(
      *     pattern="/^(\+34|0034|34)?[9][0-9]{8}$/",
      *     message="valid.fijo"

@@ -14,13 +14,25 @@
                 <source>nav.profesores</source>
                 <target>Profesores</target>
             </trans-unit>
+            <trans-unit id="nav.empresas">
+                <source>nav.empresas</source>
+                <target>Empresas</target>
+            </trans-unit>
             <trans-unit id="label.nif">
                 <source>label.nif</source>
                 <target>NIF</target>
             </trans-unit>
+            <trans-unit id="label.cif">
+                <source>label.cif</source>
+                <target>CIF</target>
+            </trans-unit>
             <trans-unit id="label.nombre">
                 <source>label.nombre</source>
                 <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="label.tutor">
+                <source>label.tutor</source>
+                <target>Nombre del tutor</target>
             </trans-unit>
             <trans-unit id="label.apellido1">
                 <source>label.apellido1</source>
@@ -82,6 +94,10 @@
                 <source>label.editarProfesor</source>
                 <target>Editar Profesor</target>
             </trans-unit>
+            <trans-unit id="label.crearEmpresa">
+                <source>label.crearEmpresa</source>
+                <target>Crear Empresa</target>
+            </trans-unit>
             <trans-unit id="flash.creadoA">
                 <source>flash.creadoA</source>
                 <target>Alumno creado correctamente.</target>
@@ -105,6 +121,10 @@
             <trans-unit id="flash.borrarP">
                 <source>flash.borrarP</source>
                 <target>Profesor eliminado correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.creadoE">
+                <source>flash.creadoE</source>
+                <target>Empresa creada correctamente.</target>
             </trans-unit>
         </body>
     </file>

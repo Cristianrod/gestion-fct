@@ -4,6 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Empresa;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class EmpresaRepository extends ServiceEntityRepository
@@ -13,16 +16,23 @@ class EmpresaRepository extends ServiceEntityRepository
         parent::__construct($registry, Empresa::class);
     }
 
-    /*
-    public function findBySomething($value)
+
+    public function findByNombre(int $pagina): Pagerfanta
     {
-        return $this->createQueryBuilder('e')
-            ->where('e.something = :value')->setParameter('value', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+        $query = $this->createQueryBuilder('e')
+            ->orderBy('e.nombre', 'ASC')
             ->getQuery()
-            ->getResult()
         ;
+        return $this->paginacion($query, $pagina);
     }
-    */
+
+    public function paginacion(Query $query, int $pagina)
+    {
+        $paginacion = new Pagerfanta(new DoctrineORMAdapter($query));
+        $paginacion = $paginacion->setMaxPerPage(4);
+        $paginacion = $paginacion->setCurrentPage($pagina);
+
+        return $paginacion;
+    }
+
 }

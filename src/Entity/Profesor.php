@@ -142,20 +142,24 @@ class Profesor
         $this->fcts = new ArrayCollection();
     }
 
-    /**
-     * @return mixed
-     */
     public function getFcts()
     {
         return $this->fcts;
     }
 
-    /**
-     * @param mixed $fcts
-     */
-    public function setFcts($fcts): void
+    public function addFct(Fct $fct)
     {
-        $this->fcts = $fcts;
+        if ($this->fcts->contains($fct)){
+            return;
+        }
+        $this->fcts[] = $fct;
+        $fct->setProfesor($this);
+    }
+
+    public function removeFct(Fct $fct)
+    {
+        $this->fcts->removeElement($fct);
+        $fct->setProfesor(null);
     }
 
     /**

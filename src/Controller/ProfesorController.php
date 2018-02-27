@@ -21,6 +21,7 @@ class ProfesorController extends Controller
 {
     /**
      * @Route("/", name="profesores")
+     * @param Request $request
      * @param ProfesorRepository $profesores
      * @return Response
      */

@@ -22,6 +22,10 @@
                 <source>valid.correo</source>
                 <target>El Correo introducido no es correcto</target>
             </trans-unit>
+            <trans-unit id="valid.cif">
+                <source>valid.cif</source>
+                <target>El CIF introducido no es correcto</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

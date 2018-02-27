@@ -29,9 +29,43 @@ class Provincia
      * @ORM\OneToMany(targetEntity="App\Entity\Alumno", mappedBy="provincia")
      */
     private $alumnos;
+
     public function __construct()
     {
         $this->alumnos = new ArrayCollection();
+        $this->empresas = new ArrayCollection();
+    }
+
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="App\Entity\Empresa", mappedBy="provincia")
+     */
+    private $empresas;
+
+    /**
+     * @return mixed
+     */
+    public function getEmpresas()
+    {
+        return $this->empresas;
+    }
+
+    /**
+     * @param Empresa $empresa
+     */
+    public function addEmpresa(Empresa $empresa): void
+    {
+        if ($this->empresas->contains($empresa)){
+            return;
+        }
+        $this->empresas[] = $empresa;
+        $empresa->setProvincia($this);
+    }
+
+    public function removeEmpresa(Empresa $empresa): void
+    {
+        $this->empresas->removeElement($empresa);
+        $empresa->setProvincia(null);
     }
 
     /**

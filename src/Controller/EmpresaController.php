@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Empresa;
 use App\Form\EmpresaType;
 use App\Repository\EmpresaRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -75,6 +76,60 @@ class EmpresaController extends Controller
     {
         return $this->render('empresa/show.html.twig', [
            'empresa' => $empresa
+        ]);
+    }
+
+    /**
+     * @Route("/editar/{id}", name="empresas_edit")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param Empresa $empresa
+     * @return Response
+     */
+    public function edit(Request $request, Empresa $empresa): Response
+    {
+        $form = $this->createForm(EmpresaType::class, $empresa)
+            ->add('editar', SubmitType::class, [
+                'label' => 'label.editarEmpresa',
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ],
+            ]);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->flush();
+
+            $this->addFlash('success', 'flash.editP');
+            return $this->redirectToRoute('empresas');
+        }
+        return $this->render('empresa/edit.html.twig',[
+            'empresa' => $empresa,
+            'form' => $form->createView(),
+        ]);
+
+    }
+
+    /**
+     * @Route("/eliminar/{id}", name="empresas_delete")
+     * @param Request $request
+     * @param Empresa $empresa
+     * @return Response
+     */
+    public function delete(Request $request, Empresa $empresa): Response
+    {
+        if ($request->isMethod('POST')){
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($empresa);
+            $em->flush();
+            $this->addFlash('success', 'flash.borrarE');
+            return $this->redirectToRoute('empresas');
+        }
+        return $this->render('empresa/delete.html.twig',[
+            'empresa' => $empresa,
         ]);
     }
 }

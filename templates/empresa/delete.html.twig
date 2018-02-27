@@ -4,15 +4,15 @@
     <div class="row">
         <div class="card m-auto mb-3 text-center">
             <div class="card-header">
-                <h1 class="font-weight-bold">Eliminar alumno <i class="fas fa-exclamation-triangle text-warning"></i></h1>
+                <h1 class="font-weight-bold">Eliminar empresa <i class="fas fa-exclamation-triangle text-warning"></i></h1>
             </div>
             <div class="card-body">
-                <h2 class="card-text text-center card-title mb-4">¿Desea eliminar al alumno <span class="font-weight-bold">{{ alumno.nombre }} {{ alumno.apellido1 }} {{ alumno.apellido2 }}</span>?</h2>
+                <h2 class="card-text text-center card-title mb-4">¿Desea eliminar la empresa <span class="font-weight-bold">{{ empresa.nombre }}</span>?</h2>
                 <div class="text-center">
-                    <form action="{{ path('alumnos_delete', {'id': alumno.id}) }}" method="POST">
+                    <form action="{{ path('empresas_delete', {'id': empresa.id}) }}" method="POST">
                         <button type="submit" class="btn btn-primary mb-2 d-inline-block col-sm-12">Eliminar</button>
                     </form>
-                    <a role="button" href="{{ path('alumnos') }}" class="btn btn-secondary col-sm-12">Cancelar</a>
+                    <a role="button" href="{{ path('empresas') }}" class="btn btn-secondary col-sm-12">Cancelar</a>
                 </div>
             </div>
         </div>

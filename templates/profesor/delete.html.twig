@@ -2,13 +2,15 @@
 {% block title %}Eliminar - Profesores{% endblock %}
 {% block container %}
     <div class="row">
-        <div class="card col-sm-4 m-auto">
-            <img class="card-img-top" src="{{ asset(profesor.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/profesores/' ~ profesor.fotografia) }}" alt="Card image cap">
+        <div class="card m-auto mb-3 text-center">
+            <div class="card-header">
+                <h1 class="font-weight-bold">Eliminar profesor <i class="fas fa-exclamation-triangle text-warning"></i></h1>
+            </div>
             <div class="card-body">
-                <p class="card-text">¿Desea eliminar al profesor {{ profesor.nombre }} {{ profesor.apellido1 }} {{ profesor.apellido2 }}?</p>
+                <h2 class="card-text text-center card-title mb-4">¿Desea eliminar al profesor <span class="font-weight-bold">{{ profesor.nombre }} {{ profesor.apellido1 }} {{ profesor.apellido2 }}</span>?</h2>
                 <div class="text-center">
                     <form action="{{ path('profesores_delete', {'id': profesor.id}) }}" method="POST">
-                        <button type="submit" class="btn btn-danger mb-2 d-inline-block col-sm-12">Eliminar</button>
+                        <button type="submit" class="btn btn-primary mb-2 d-inline-block col-sm-12">Eliminar</button>
                     </form>
                     <a role="button" href="{{ path('profesores') }}" class="btn btn-secondary col-sm-12">Cancelar</a>
                 </div>

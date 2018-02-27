@@ -98,6 +98,10 @@
                 <source>label.crearEmpresa</source>
                 <target>Crear Empresa</target>
             </trans-unit>
+            <trans-unit id="label.editarEmpresa">
+                <source>label.editarEmpresa</source>
+                <target>Editar Empresa</target>
+            </trans-unit>
             <trans-unit id="flash.creadoA">
                 <source>flash.creadoA</source>
                 <target>Alumno creado correctamente.</target>
@@ -125,6 +129,14 @@
             <trans-unit id="flash.creadoE">
                 <source>flash.creadoE</source>
                 <target>Empresa creada correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.editE">
+                <source>flash.editE</source>
+                <target>Empresa editada correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.borrarE">
+                <source>flash.borrarE</source>
+                <target>Empresa eliminada correctamente.</target>
             </trans-unit>
         </body>
     </file>

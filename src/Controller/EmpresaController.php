@@ -65,4 +65,16 @@ class EmpresaController extends Controller
            'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="empresas_show")
+     * @param Empresa $empresa
+     * @return Response
+     */
+    public function show(Empresa $empresa): Response
+    {
+        return $this->render('empresa/show.html.twig', [
+           'empresa' => $empresa
+        ]);
+    }
 }

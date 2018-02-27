@@ -6,14 +6,14 @@
             <img src="{{ asset(profesor.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/profesores/' ~ profesor.fotografia) }}" class="rounded mx-auto d-block foto-perfil">
         </div>
         <ul class="list-group col-sm-12 col-md-6 mb-2">
-            <li class="list-group-item text-light bg-primary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-info-circle"></i> Datos Personales</h3></li>
+            <li class="list-group-item text-light mb-0 bg-primary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-info-circle"></i> Datos Personales</h3></li>
             <li class="list-group-item"><span class="font-weight-bold">NIF:</span> {{ profesor.nif }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Nombre:</span> {{ profesor.nombre }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Apellidos:</span> {{ profesor.apellido1 }} {{ profesor.apellido2 }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Usuario:</span> {{ profesor.usuario }}</li>
         </ul>
         <ul class="list-group col-sm-12 col-md-12 mt-2">
-            <li class="list-group-item text-light bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"> <i class="fas fa-address-card"></i> Contacto</h3></li>
+            <li class="list-group-item text-light mb-0 bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"> <i class="fas fa-address-card"></i> Contacto</h3></li>
             <li class="list-group-item"><span class="font-weight-bold">Móvil:</span> {{ profesor.movil }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Tlf. Fijo:</span> {{ profesor.fijo|default('Sin datos') }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Correo:</span> {{ profesor.correo }}</li>

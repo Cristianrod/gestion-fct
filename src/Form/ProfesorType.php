@@ -46,8 +46,7 @@ class ProfesorType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // uncomment if you want to bind to a class
-            //'data_class' => Profesor::class,
+            'data_class' => Profesor::class,
         ]);
     }
 }

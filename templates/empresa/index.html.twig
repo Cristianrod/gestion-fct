@@ -1,6 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block title %}Incio - Empresas{% endblock %}
 {% block container %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ path('incio') }}">Incio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Empresas</li>
+        </ol>
+    </nav>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1><i class="fas fa-building"></i> Empresas <a href="{{ path('empresas_new') }}"><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
+        </div>
+    </div>
     <table class="table table-bordered table-hover">
         <thead>
         <tr class="text-center">

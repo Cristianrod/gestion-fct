@@ -66,8 +66,9 @@ class AlumnoType extends AbstractType
                     return $er->createQueryBuilder('c')
                         ->orderBy('c.nombre', 'ASC');
                },
-                'choice_label' => function ($ciclo){
-                /* @var \App\Entity\Ciclo $ciclo*/
+                'choice_label' => function ($ciclo)
+                {
+                    /* @var \App\Entity\Ciclo $ciclo*/
                     return $ciclo->getNombre() .' (' . $ciclo->getCodigo() . ')';
                 },
             ]);

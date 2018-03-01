@@ -35,7 +35,7 @@ class ProfesorController extends Controller
     }
 
     /**
-     * @Route("/nuevo", name="profesores_new")
+     * @Route("/agregar", name="profesores_new")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
@@ -102,7 +102,7 @@ class ProfesorController extends Controller
     }
 
     /**
-     * @Route("/editar/{id}", name="profesores_edit")
+     * @Route("/actualizar/{id}", name="profesores_edit")
      * @param Request $request
      * @param Profesor $profesor
      * @return Response

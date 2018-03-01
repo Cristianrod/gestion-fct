@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title %}Ver - Alumnos{% endblock %}
 {% block container %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ path('incio') }}">Incio</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('alumnos') }}">Alumnos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ver</li>
+        </ol>
+    </nav>
     <div class="row">
         <div class="col-sm-12 col-md-6 mb-2">
             <img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded mx-auto d-block foto-perfil">

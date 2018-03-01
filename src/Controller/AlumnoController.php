@@ -36,7 +36,7 @@ class AlumnoController extends Controller
     }
 
     /**
-     * @Route("/nuevo", name="alumnos_new")
+     * @Route("/agregar", name="alumnos_new")
      * @param Request $request
      * @return Response
      */
@@ -104,7 +104,7 @@ class AlumnoController extends Controller
     }
 
     /**
-     * @Route("/editar/{id}", name="alumnos_edit")
+     * @Route("/actualizar/{id}", name="alumnos_edit")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @param Alumno $alumno

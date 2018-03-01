@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title %}Ver - Alumnos{% endblock %}
 {% block container %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ path('incio') }}">Incio</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('empresas') }}">Empresas</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ver</li>
+        </ol>
+    </nav>
     <div class="row">
         <ul class="list-group col-sm-12 col-md-12 mb-2">
             <li class="list-group-item text-light mb-0 bg-primary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-info-circle"></i> Datos de la empresa</h3></li>

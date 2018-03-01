@@ -1,36 +1,49 @@
 {% extends 'base.html.twig' %}
 {% block title %}Incio - Alumnos{% endblock %}
 {% block container %}
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr class="text-center">
-                <th scope="col">Fotografía</th>
-                <th scope="col">NIF</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for alumno in alumnos %}
-                    <tr class="text-center">
-                        <td><img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded img-fluid foto-mini"></td>
-                        <th scope="row">{{ alumno.nif }}</th>
-                        <td>{{ alumno.nombre }}</td>
-                        <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
-                        <td>{{ alumno.correo }}</td>
-                        <td><a role="button" href="{{ path('alumnos_show', {'id': alumno.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
-                            <a role="button" href="{{ path('alumnos_edit', {'id': alumno.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
-                            <a role="button" href="{{ path('alumnos_delete', {'id': alumno.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        {% if alumnos.haveToPaginate %}
-            <nav>
-                {{ pagerfanta(alumnos, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
-            </nav>
-        {% endif %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ path('incio') }}">Incio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Alumnos</li>
+        </ol>
+    </nav>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1><i class="fas fa-graduation-cap"></i> Alumnos <a href="{{ path('alumnos_new') }}"><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">Fotografía</th>
+            <th scope="col">NIF</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Ciclo</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+                <tr class="text-center">
+                    <td><img src="{{ asset(alumno.fotografia is null ? 'build/images/user.png' : 'subidas/fotos/alumnos/' ~ alumno.fotografia) }}" class="rounded img-fluid foto-mini"></td>
+                    <th scope="row">{{ alumno.nif }}</th>
+                    <td>{{ alumno.nombre }}</td>
+                    <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
+                    <td>{{ alumno.correo }}</td>
+                    <td>{{ alumno.ciclo.codigo }}</td>
+                    <td><a role="button" href="{{ path('alumnos_show', {'id': alumno.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
+                        <a role="button" href="{{ path('alumnos_edit', {'id': alumno.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                        <a role="button" href="{{ path('alumnos_delete', {'id': alumno.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if alumnos.haveToPaginate %}
+        <nav>
+            {{ pagerfanta(alumnos, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
+        </nav>
+    {% endif %}
 {% endblock %}

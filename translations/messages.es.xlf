@@ -84,35 +84,35 @@
             </trans-unit>
             <trans-unit id="label.crearAlumno">
                 <source>label.crearAlumno</source>
-                <target>Crear Alumno</target>
+                <target>Agregar Alumno</target>
             </trans-unit>
             <trans-unit id="label.editarAlumno">
                 <source>label.editarAlumno</source>
-                <target>Editar Alumno</target>
+                <target>Actualizar Alumno</target>
             </trans-unit>
             <trans-unit id="label.crearProfesor">
                 <source>label.crearProfesor</source>
-                <target>Crear Profesor</target>
+                <target>Agregar Profesor</target>
             </trans-unit>
             <trans-unit id="label.editarProfesor">
                 <source>label.editarProfesor</source>
-                <target>Editar Profesor</target>
+                <target>Actualizar Profesor</target>
             </trans-unit>
             <trans-unit id="label.crearEmpresa">
                 <source>label.crearEmpresa</source>
-                <target>Crear Empresa</target>
+                <target>Agregar Empresa</target>
             </trans-unit>
             <trans-unit id="label.editarEmpresa">
                 <source>label.editarEmpresa</source>
-                <target>Editar Empresa</target>
+                <target>Actualizar Empresa</target>
             </trans-unit>
             <trans-unit id="flash.creadoA">
                 <source>flash.creadoA</source>
-                <target>Alumno creado correctamente.</target>
+                <target>Alumno agregado correctamente.</target>
             </trans-unit>
             <trans-unit id="flash.editA">
                 <source>flash.editA</source>
-                <target>Alumno editado correctamente.</target>
+                <target>Alumno actualizado correctamente.</target>
             </trans-unit>
             <trans-unit id="flash.borrarA">
                 <source>flash.borrarA</source>
@@ -120,11 +120,11 @@
             </trans-unit>
             <trans-unit id="flash.creadoP">
                 <source>flash.creadoP</source>
-                <target>Profesor creado correctamente.</target>
+                <target>Profesor agregado correctamente.</target>
             </trans-unit>
             <trans-unit id="flash.editP">
                 <source>flash.editP</source>
-                <target>Profesor editado correctamente.</target>
+                <target>Profesor actualizado correctamente.</target>
             </trans-unit>
             <trans-unit id="flash.borrarP">
                 <source>flash.borrarP</source>
@@ -132,11 +132,11 @@
             </trans-unit>
             <trans-unit id="flash.creadoE">
                 <source>flash.creadoE</source>
-                <target>Empresa creada correctamente.</target>
+                <target>Empresa agregada correctamente.</target>
             </trans-unit>
             <trans-unit id="flash.editE">
                 <source>flash.editE</source>
-                <target>Empresa editada correctamente.</target>
+                <target>Empresa actualizada correctamente.</target>
             </trans-unit>
             <trans-unit id="flash.borrarE">
                 <source>flash.borrarE</source>

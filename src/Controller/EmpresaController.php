@@ -35,7 +35,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * @Route("/nuevo", name="empresas_new")
+     * @Route("/agregar", name="empresas_new")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
@@ -80,7 +80,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * @Route("/editar/{id}", name="empresas_edit")
+     * @Route("/actualizar/{id}", name="empresas_edit")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @param Empresa $empresa

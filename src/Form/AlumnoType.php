@@ -3,12 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Alumno;
+use App\Entity\Ciclo;
 use App\Entity\Provincia;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -59,6 +59,18 @@ class AlumnoType extends AbstractType
             ->add('correo', null, [
                 'label' => 'label.correo',
             ])
+            ->add('ciclo', EntityType::class, [
+               'label' => 'label.ciclos',
+               'class' => Ciclo::class,
+               'query_builder' => function(EntityRepository $er){
+                    return $er->createQueryBuilder('c')
+                        ->orderBy('c.nombre', 'ASC');
+               },
+                'choice_label' => function ($ciclo){
+                /* @var \App\Entity\Ciclo $ciclo*/
+                    return $ciclo->getNombre() .' (' . $ciclo->getCodigo() . ')';
+                },
+            ]);
         ;
     }
 

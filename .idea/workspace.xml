@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35e23e3-8503-4d16-ac0a-a726baf22529" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ciclo.php" afterPath="$PROJECT_DIR$/src/Entity/Ciclo.php" />
+      <change beforePath="$PROJECT_DIR$/src/Form/AlumnoType.php" afterPath="$PROJECT_DIR$/src/Form/AlumnoType.php" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.es.xlf" afterPath="$PROJECT_DIR$/translations/messages.es.xlf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,7 +45,7 @@
         <item name="gestionfct@192.168.10.10" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="gestionfct: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="ciclos: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="alumnos: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -62,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ciclo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ciclo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Ciclo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
+            <state relative-caret-position="-870">
               <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
@@ -101,11 +101,31 @@
       <file leaf-file-name="Alumno.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Alumno.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
-              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+            <state relative-caret-position="2970">
+              <caret line="144" column="8" lean-forward="true" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlumnoController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1670">
+              <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlumnoType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Form/AlumnoType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,6 +162,7 @@
       <find>empresa</find>
       <find>removeFct</find>
       <find>$profesors</find>
+      <find>label.pr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,7 +188,6 @@
         <option value="$PROJECT_DIR$/templates/alumno/new.html.twig" />
         <option value="$PROJECT_DIR$/templates/profesor/new.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
-        <option value="$PROJECT_DIR$/src/Form/AlumnoType.php" />
         <option value="$PROJECT_DIR$/src/Entity/Alumno.php" />
         <option value="$PROJECT_DIR$/templates/alumno/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/AlumnoRepository.php" />
@@ -186,7 +206,6 @@
         <option value="$PROJECT_DIR$/templates/profesor/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Empresa.php" />
         <option value="$PROJECT_DIR$/templates/empresa/edit.html.twig" />
-        <option value="$PROJECT_DIR$/translations/messages.es.xlf" />
         <option value="$PROJECT_DIR$/templates/empresa/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/EmpresaController.php" />
         <option value="$PROJECT_DIR$/templates/default/index.html.twig" />
@@ -201,6 +220,8 @@
         <option value="$PROJECT_DIR$/src/Entity/Fct.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
         <option value="$PROJECT_DIR$/src/Entity/Ciclo.php" />
+        <option value="$PROJECT_DIR$/translations/messages.es.xlf" />
+        <option value="$PROJECT_DIR$/src/Form/AlumnoType.php" />
       </list>
     </option>
   </component>
@@ -395,6 +416,12 @@
               <item name="servidor" type="b2602c69:ProjectViewProjectNode" />
               <item name="servidor" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="servidor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servidor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="DataFixtures" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -414,6 +441,12 @@
               <item name="servidor" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="servidor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servidor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="servidor" type="b2602c69:ProjectViewProjectNode" />
@@ -491,12 +524,12 @@
       <workItem from="1519686156204" duration="2196000" />
       <workItem from="1519740213345" duration="8641000" />
       <workItem from="1519751302548" duration="8182000" />
-      <workItem from="1519919719474" duration="2871000" />
+      <workItem from="1519919719474" duration="4885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129230000" />
+    <option name="totallyTimeSpent" value="131244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -537,22 +570,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/profesor/edit.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/Repository/AlumnoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/profesor/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -572,14 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/AlumnoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -632,14 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/messages.es.xlf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="138" column="41" lean-forward="false" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -727,14 +729,6 @@
             <element signature="e#3823#3833#1#PHP" expanded="false" />
             <element signature="e#3875#3901#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,23 +895,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Alumno.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Ciclo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        <state relative-caret-position="-870">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Ciclo.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/ProvinciaRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/AlumnoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Alumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="144" column="8" lean-forward="true" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AlumnoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1670">
+          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/messages.es.xlf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/AlumnoType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>

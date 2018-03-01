@@ -78,6 +78,10 @@
                 <source>label.usuario</source>
                 <target>Usuario</target>
             </trans-unit>
+            <trans-unit id="label.ciclos">
+                <source>label.ciclos</source>
+                <target>Ciclos</target>
+            </trans-unit>
             <trans-unit id="label.crearAlumno">
                 <source>label.crearAlumno</source>
                 <target>Crear Alumno</target>

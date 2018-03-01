@@ -4,10 +4,13 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CicloRepository")
  * @ORM\Table(name="ciclos")
+ * @UniqueEntity("codigo")
  */
 class Ciclo
 {
@@ -19,22 +22,26 @@ class Ciclo
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $codigo;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $nombre;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $grado;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     private $horas;
 

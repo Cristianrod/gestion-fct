@@ -138,6 +138,10 @@
                 <source>label.crearFct</source>
                 <target>Agregar FCT</target>
             </trans-unit>
+            <trans-unit id="label.editarFCT">
+                <source>label.editarFCT</source>
+                <target>Actualizar FCT</target>
+            </trans-unit>
             <trans-unit id="flash.creadoA">
                 <source>flash.creadoA</source>
                 <target>Alumno agregado correctamente.</target>
@@ -177,6 +181,10 @@
             <trans-unit id="flash.creadoF">
                 <source>flash.creadoF</source>
                 <target>FCT agregada correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.editF">
+                <source>flash.editF</source>
+                <target>FCT actualizada correctamente.</target>
             </trans-unit>
         </body>
     </file>

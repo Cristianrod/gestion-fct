@@ -27,18 +27,23 @@
         <tbody>
             {% for fct in fcts %}
                 <tr class="text-center">
-                    <th scope="row">{{ fct.alumno.nombre }}</th>
+                    <th scope="row">{{ fct.alumno.nombre }} {{ fct.alumno.apellido1 }} {{ fct.alumno.apellido2 }}</th>
                     <td>{{ fct.empresa.nombre }}</td>
                     <td>{{ fct.profesor.nombre }}</td>
                     <td>{{ fct.ciclo.nombre }} ({{ fct.ciclo.codigo }})</td>
                     <td>{{ fct.anio }}</td>
                     <td>{{ fct.periodo }}</td>
-                    <td><a role="button" href="{{ path('alumnos_show', {'id': fct.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
-                        <a role="button" href="{{ path('alumnos_edit', {'id': fct.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                    <td>
+                        <a role="button" href="{{ path('fcts_edit', {'id': fct.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
                         <a role="button" href="{{ path('alumnos_delete', {'id': fct.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    {% if fcts.haveToPaginate %}
+        <nav>
+            {{ pagerfanta(fcts, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
+        </nav>
+    {% endif %}
 {% endblock %}

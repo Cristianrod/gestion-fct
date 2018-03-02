@@ -20,6 +20,9 @@ class FctController extends Controller
 {
     /**
      * @Route("/", name="fcts")
+     * @param Request $request
+     * @param FctRepository $fcts
+     * @return Response
      */
     public function index(Request $request, FctRepository $fcts): Response
     {
@@ -59,6 +62,38 @@ class FctController extends Controller
 
         return $this->render('fct/new.html.twig', [
             'form' => $form->createView(),
+        ]);
+
+    }
+
+    /**
+     * @Route("/actualizar/{id}", name="fcts_edit")
+     * @param Request $request
+     * @param Fct $fct
+     */
+    public function edit(Request $request, Fct $fct)
+    {
+        $form = $this->createForm(FctType::class, $fct)
+            ->add('editar', SubmitType::class, [
+                'label' => 'label.editarFCT',
+                'attr' => [
+                    'class' => 'btn btn-success',
+                ],
+            ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->flush();
+
+            $this->addFlash('success', 'flash.editF');
+            return $this->redirectToRoute('fcts');
+        }
+
+        return $this->render('fct/edit.html.twig', [
+           'fct' => $fct,
+           'form' => $form->createView(),
         ]);
 
     }

@@ -60,7 +60,7 @@ class AlumnoType extends AbstractType
                 'label' => 'label.correo',
             ])
             ->add('ciclo', EntityType::class, [
-               'label' => 'label.ciclos',
+               'label' => 'label.ciclo',
                'class' => Ciclo::class,
                'query_builder' => function(EntityRepository $er){
                     return $er->createQueryBuilder('c')

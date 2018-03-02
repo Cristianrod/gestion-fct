@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35e23e3-8503-4d16-ac0a-a726baf22529" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.dist" afterPath="$PROJECT_DIR$/.env.dist" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/servidor.iml" afterPath="$PROJECT_DIR$/.idea/servidor.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" afterPath="$PROJECT_DIR$/config/bundles.php" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FctController.php" afterPath="$PROJECT_DIR$/src/Controller/FctController.php" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
       <change beforePath="$PROJECT_DIR$/templates/fct/index.html.twig" afterPath="$PROJECT_DIR$/templates/fct/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.es.xlf" afterPath="$PROJECT_DIR$/translations/messages.es.xlf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,18 +61,39 @@
       <file leaf-file-name="FctController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FctController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="101" column="49" lean-forward="false" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+            <state relative-caret-position="3362">
+              <caret line="125" column="7" lean-forward="true" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
               <folding>
                 <element signature="e#34#53#0#PHP" expanded="true" />
-                <element signature="e#843#864#0#PHP" expanded="true" />
-                <element signature="e#1762#1768#1#PHP" expanded="true" />
-                <element signature="e#1811#1830#0#PHP" expanded="true" />
-                <element signature="e#2694#2700#1#PHP" expanded="true" />
-                <element signature="e#2743#2763#0#PHP" expanded="true" />
-                <element signature="e#3363#3369#1#PHP" expanded="true" />
-                <element signature="e#3412#3434#0#PHP" expanded="true" />
+                <element signature="e#900#921#0#PHP" expanded="true" />
+                <element signature="e#1819#1825#1#PHP" expanded="true" />
+                <element signature="e#1868#1887#0#PHP" expanded="true" />
+                <element signature="e#2751#2757#1#PHP" expanded="true" />
+                <element signature="e#2800#2820#0#PHP" expanded="true" />
+                <element signature="e#3420#3426#1#PHP" expanded="true" />
+                <element signature="e#3469#3491#0#PHP" expanded="true" />
+                <element signature="e#3814#3834#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fcts.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/pdf/fcts.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,11 +115,12 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/fct/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="37" column="67" lean-forward="false" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+            <state relative-caret-position="1530">
+              <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
               <folding>
                 <element signature="e#1575#1584#0#Twig" expanded="true" />
                 <element signature="e#1751#1762#0#Twig" expanded="true" />
+                <element signature="e#2331#2339#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/config/packages/framework.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/IncioController.php" />
         <option value="$PROJECT_DIR$/translations/validation.es.xlf" />
@@ -162,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/Repository/EmpresaRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/ProfesorRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Profesor.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Entity/Ciclo.php" />
         <option value="$PROJECT_DIR$/templates/alumno/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/alumno/delete.html.twig" />
@@ -192,8 +205,10 @@
         <option value="$PROJECT_DIR$/src/Repository/FctRepository.php" />
         <option value="$PROJECT_DIR$/templates/fct/edit.html.twig" />
         <option value="$PROJECT_DIR$/translations/messages.es.xlf" />
-        <option value="$PROJECT_DIR$/src/Controller/FctController.php" />
         <option value="$PROJECT_DIR$/templates/fct/delete.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/FctController.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/templates/pdf/fcts.html.twig" />
         <option value="$PROJECT_DIR$/templates/fct/index.html.twig" />
       </list>
     </option>
@@ -309,9 +324,13 @@
       <path value="$PROJECT_DIR$/vendor/white-october/pagerfanta-bundle" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/wkhtmltox/share" />
+      <path value="$PROJECT_DIR$/vendor/wkhtmltox/bin" />
+      <path value="$PROJECT_DIR$/vendor/wkhtmltox/lib" />
+      <path value="$PROJECT_DIR$/vendor/wkhtmltox/include" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -557,15 +576,15 @@
       <workItem from="1519919719474" duration="10969000" />
       <workItem from="1519943103328" duration="9515000" />
       <workItem from="1520009365424" duration="9473000" />
-      <workItem from="1520027327688" duration="441000" />
+      <workItem from="1520027327688" duration="2956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156757000" />
+    <option name="totallyTimeSpent" value="159272000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2603834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -603,8 +622,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180226181803.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180226164331.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180218065708.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180218063750.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180226173835.php" />
@@ -701,16 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="22" column="140" lean-forward="false" selection-start-line="22" selection-start-column="140" selection-end-line="22" selection-end-column="140" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="32" column="67" lean-forward="false" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
-          <folding>
-            <element signature="e#1905#1909#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,23 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FctController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="101" column="49" lean-forward="false" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
-          <folding>
-            <element signature="e#34#53#0#PHP" expanded="true" />
-            <element signature="e#843#864#0#PHP" expanded="true" />
-            <element signature="e#1762#1768#1#PHP" expanded="true" />
-            <element signature="e#1811#1830#0#PHP" expanded="true" />
-            <element signature="e#2694#2700#1#PHP" expanded="true" />
-            <element signature="e#2743#2763#0#PHP" expanded="true" />
-            <element signature="e#3363#3369#1#PHP" expanded="true" />
-            <element signature="e#3412#3434#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/fct/delete.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -945,13 +935,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="27" column="72" lean-forward="false" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FctController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3362">
+          <caret line="125" column="7" lean-forward="true" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
+          <folding>
+            <element signature="e#34#53#0#PHP" expanded="true" />
+            <element signature="e#900#921#0#PHP" expanded="true" />
+            <element signature="e#1819#1825#1#PHP" expanded="true" />
+            <element signature="e#1868#1887#0#PHP" expanded="true" />
+            <element signature="e#2751#2757#1#PHP" expanded="true" />
+            <element signature="e#2800#2820#0#PHP" expanded="true" />
+            <element signature="e#3420#3426#1#PHP" expanded="true" />
+            <element signature="e#3469#3491#0#PHP" expanded="true" />
+            <element signature="e#3814#3834#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pdf/fcts.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/fct/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="37" column="67" lean-forward="false" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+        <state relative-caret-position="1530">
+          <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
           <folding>
             <element signature="e#1575#1584#0#Twig" expanded="true" />
             <element signature="e#1751#1762#0#Twig" expanded="true" />
+            <element signature="e#2331#2339#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>

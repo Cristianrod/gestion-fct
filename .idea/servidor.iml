@@ -100,6 +100,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/white-october/pagerfanta-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wkhtmltox/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wkhtmltox/include" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wkhtmltox/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wkhtmltox/share" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
     </content>

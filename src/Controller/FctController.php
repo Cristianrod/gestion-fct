@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Fct;
 use App\Form\FctType;
 use App\Repository\FctRepository;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -117,5 +118,23 @@ class FctController extends Controller
         return $this->render('fct/delete.html.twig',[
             'fct' => $fct,
         ]);
+    }
+
+    /**
+     * @Route("/pdf", name="pdf_fcts")
+     * @return Response
+     */
+    public function pdf(): Response
+    {
+        $fctRepositorio = $this->getDoctrine()->getRepository(Fct::class);
+        $fcts = $fctRepositorio->findAll();
+        $html = $this->renderView('pdf/fcts.html.twig', [
+            'fcts' => $fcts
+        ]);
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            'listadofcts.pdf'
+        );
     }
 }

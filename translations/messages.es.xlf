@@ -18,6 +18,10 @@
                 <source>nav.empresas</source>
                 <target>Empresas</target>
             </trans-unit>
+            <trans-unit id="label.nodata">
+                <source>label.nodata</source>
+                <target>Sin especificar</target>
+            </trans-unit>
             <trans-unit id="label.nif">
                 <source>label.nif</source>
                 <target>NIF</target>

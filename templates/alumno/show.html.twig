@@ -17,19 +17,23 @@
             <li class="list-group-item"><span class="font-weight-bold">NIF:</span> {{ alumno.nif }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Nombre:</span> {{ alumno.nombre }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Apellidos:</span> {{ alumno.apellido1 }} {{ alumno.apellido2 }}</li>
-            <li class="list-group-item"><span class="font-weight-bold">Provincia:</span> {{ alumno.provincia.nombre }}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Ciclo: </span>{{ alumno.ciclo.nombre }} ({{ alumno.ciclo.codigo }})</li>
         </ul>
         <ul class="list-group col-sm-12 col-md-6 mt-2">
             <li class="list-group-item text-light mb-0 bg-secondary font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-map-marker-alt"></i> Localización</h3></li>
-            <li class="list-group-item"><span class="font-weight-bold">Dirección:</span> {{ alumno.direccion|default('Sin datos') }}</li>
-            <li class="list-group-item"><span class="font-weight-bold">Población:</span> {{ alumno.poblacion|default('Sin datos') }}</li>
-            <li class="list-group-item"><span class="font-weight-bold">Código Postal:</span> {{ alumno.codpostal|default('Sin datos') }}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Dirección:</span> {{ alumno.direccion|default('label.nodata'|trans) }}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Población:</span> {{ alumno.poblacion|default('label.nodata'|trans) }} - ({{ alumno.provincia.nombre }})</li>
+            <li class="list-group-item"><span class="font-weight-bold">Código Postal:</span> {{ alumno.codpostal|default('label.nodata'|trans) }}</li>
         </ul>
         <ul class="list-group col-sm-12 col-md-6 mt-2">
-            <li class="list-group-item text-light mb-0 bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"> <i class="fas fa-address-card"></i> Contacto</h3></li>
+            <li class="list-group-item text-light mb-0 bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-address-card"></i> Contacto</h3></li>
             <li class="list-group-item"><span class="font-weight-bold">Móvil:</span> {{ alumno.movil }}</li>
-            <li class="list-group-item"><span class="font-weight-bold">Tlf. Fijo:</span> {{ alumno.fijo|default('Sin datos') }}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Tlf. Fijo:</span> {{ alumno.fijo|default('label.nodata'|trans) }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Correo:</span> {{ alumno.correo }}</li>
+        </ul>
+        <ul class="list-group col-sm-12 mt-2">
+            <li class="list-group-item text-light mb-0 bg-info font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-book"></i> Fct</h3></li>
+            <li class="list-group-item"><span class="font-weight-bold">FCT: </span></li>
         </ul>
     </div>
 {% endblock %}

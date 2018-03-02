@@ -105,7 +105,8 @@ class Alumno
     private $direccion;
 
     /**
-     * @ORM\Column(type="string", nullable=true, length=100)
+     * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $poblacion;
 

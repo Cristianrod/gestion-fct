@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}Eliminar - FCTs{% endblock %}
+{% block container %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ path('incio') }}">Incio</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('fcts') }}">FCTs</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Eliminar</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="card m-auto mb-3 text-center">
+            <div class="card-header">
+                <h1 class="font-weight-bold">Eliminar FCT <i class="fas fa-exclamation-triangle text-warning"></i></h1>
+            </div>
+            <div class="card-body">
+                <h2 class="card-text text-center card-title mb-4">¿Desea eliminar la FCT del alumno <span class="font-weight-bold">{{ fct.alumno.nombre }}</span>?</h2>
+                <div class="text-center">
+                    <form action="{{ path('fcts_delete', {'id': fct.id}) }}" method="POST">
+                        <button type="submit" class="btn btn-primary mb-2 d-inline-block col-sm-12">Eliminar</button>
+                    </form>
+                    <a role="button" href="{{ path('fcts') }}" class="btn btn-secondary col-sm-12">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

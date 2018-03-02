@@ -69,7 +69,8 @@ class FctController extends Controller
     /**
      * @Route("/actualizar/{id}", name="fcts_edit")
      * @param Request $request
-     * @param Fct $fct
+     * @param Fct $fct *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function edit(Request $request, Fct $fct)
     {
@@ -95,6 +96,26 @@ class FctController extends Controller
            'fct' => $fct,
            'form' => $form->createView(),
         ]);
+    }
 
+    /**
+     * @Route("/eliminar/{id}", name="fcts_delete")
+     * @param Request $request
+     * @param Fct $fct
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function delete(Request $request, Fct $fct)
+    {
+        if ($request->isMethod('POST')){
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($fct);
+            $em->flush();
+            $this->addFlash('success', 'flash.borrarA');
+            return $this->redirectToRoute('fcts');
+        }
+
+        return $this->render('fct/delete.html.twig',[
+            'fct' => $fct,
+        ]);
     }
 }

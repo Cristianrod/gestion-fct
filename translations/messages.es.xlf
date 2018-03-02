@@ -186,6 +186,10 @@
                 <source>flash.editF</source>
                 <target>FCT actualizada correctamente.</target>
             </trans-unit>
+            <trans-unit id="flash.borrarF">
+                <source>flash.borrarF</source>
+                <target>FCT eliminada correctamente.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

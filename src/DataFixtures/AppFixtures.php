@@ -26,15 +26,24 @@ class AppFixtures extends Fixture
         }
 
         $ciclos = $this->generarCiclos();
-        foreach ($ciclos as $codigo => $nombre){
+//        foreach ($ciclos as $codigo => $nombre){
+//            foreach ($nombre as $valor){
+//                $ciclo = new Ciclo();
+//                $ciclo->setCodigo($codigo);
+//                $ciclo->setNombre($valor);
+//                $ciclo->setGrado($valor);
+//                $ciclo->setHoras($valor);
+//                $manager->persist($ciclo);
+//            }
+//        }
+        foreach ($ciclos as $valorCiclo){
             $ciclo = new Ciclo();
-            $ciclo->setCodigo($codigo);
-            $ciclo->setNombre($nombre);
-            $ciclo->setGrado('Superior');
-            $ciclo->setHoras(2000);
+            $ciclo->setCodigo($valorCiclo['codigo']);
+            $ciclo->setNombre($valorCiclo['nombre']);
+            $ciclo->setGrado($valorCiclo['grado']);
+            $ciclo->setHoras($valorCiclo['horas']);
             $manager->persist($ciclo);
         }
-
         $manager->flush();
     }
 
@@ -46,8 +55,13 @@ class AppFixtures extends Fixture
     public function generarCiclos()
     {
         return [
-            'DAW' => 'Desarrollo de Aplicaciones Web',
-            'DAM' => 'Desarrollo de Aplicaciones Multiplataforma'
+            ['codigo' => 'DAW', 'nombre' => 'Desarrollo de Aplicaciones Web', 'grado' => 'Superior', 'horas' => 2000],
+            ['codigo' => 'ASIR', 'nombre' => 'Administración de Sistemas Informáticos en Red', 'grado' => 'Superior', 'horas' => 2000],
+            ['codigo' => 'GVEC', 'nombre' => 'Gestión de Ventas y Espacios Comerciales', 'grado' => 'Superior', 'horas' => 2000],
+            ['codigo' => 'AFI', 'nombre' => 'Administración y Finanzas', 'grado' => 'Superior', 'horas' => 2000],
+            ['codigo' => 'SMR', 'nombre' => 'Sistemas Microinformáticos y Redes', 'grado' => 'Medio', 'horas' => 2000],
+            ['codigo' => 'GA', 'nombre' => 'Gestión Administrativa', 'grado' => 'Medio', 'horas' => 2000],
+            ['codigo' => 'AC', 'nombre' => 'Actividades Comerciales', 'grado' => 'Medio', 'horas' => 2000],
         ];
     }
 }

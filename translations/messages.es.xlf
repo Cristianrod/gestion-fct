@@ -86,9 +86,29 @@
                 <source>label.usuario</source>
                 <target>Usuario</target>
             </trans-unit>
-            <trans-unit id="label.ciclos">
-                <source>label.ciclos</source>
-                <target>Ciclos</target>
+            <trans-unit id="label.ciclo">
+                <source>label.ciclo</source>
+                <target>Ciclo</target>
+            </trans-unit>
+            <trans-unit id="label.alumno">
+                <source>label.alumno</source>
+                <target>Alumno</target>
+            </trans-unit>
+            <trans-unit id="label.profesor">
+                <source>label.profesor</source>
+                <target>Profesor</target>
+            </trans-unit>
+            <trans-unit id="label.empresa">
+                <source>label.empresa</source>
+                <target>Empresa</target>
+            </trans-unit>
+            <trans-unit id="label.anio">
+                <source>label.anio</source>
+                <target>Año</target>
+            </trans-unit>
+            <trans-unit id="label.periodo">
+                <source>label.periodo</source>
+                <target>Periodo</target>
             </trans-unit>
             <trans-unit id="label.crearAlumno">
                 <source>label.crearAlumno</source>
@@ -113,6 +133,10 @@
             <trans-unit id="label.editarEmpresa">
                 <source>label.editarEmpresa</source>
                 <target>Actualizar Empresa</target>
+            </trans-unit>
+            <trans-unit id="label.crearFct">
+                <source>label.crearFct</source>
+                <target>Agregar FCT</target>
             </trans-unit>
             <trans-unit id="flash.creadoA">
                 <source>flash.creadoA</source>
@@ -149,6 +173,10 @@
             <trans-unit id="flash.borrarE">
                 <source>flash.borrarE</source>
                 <target>Empresa eliminada correctamente.</target>
+            </trans-unit>
+            <trans-unit id="flash.creadoF">
+                <source>flash.creadoF</source>
+                <target>FCT agregada correctamente.</target>
             </trans-unit>
         </body>
     </file>

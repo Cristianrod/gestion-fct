@@ -4,6 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Fct;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class FctRepository extends ServiceEntityRepository
@@ -13,16 +16,23 @@ class FctRepository extends ServiceEntityRepository
         parent::__construct($registry, Fct::class);
     }
 
-    /*
-    public function findBySomething($value)
+
+    public function findByNombre(int $pagina): Pagerfanta
     {
-        return $this->createQueryBuilder('f')
-            ->where('f.something = :value')->setParameter('value', $value)
+        $query = $this->createQueryBuilder('f')
             ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
         ;
+        return $this->paginacion($query, $pagina);
     }
-    */
+
+    public function paginacion(Query $query, int $pagina)
+    {
+        $paginacion = new Pagerfanta(new DoctrineORMAdapter($query));
+        $paginacion = $paginacion->setMaxPerPage(4);
+        $paginacion = $paginacion->setCurrentPage($pagina);
+
+        return $paginacion;
+    }
+
 }

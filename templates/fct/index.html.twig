@@ -9,7 +9,7 @@
     </nav>
     <div class="card mb-4">
         <div class="card-body">
-            <h1><i class="fas fa-book"></i> FCTs <a href=""><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
+            <h1><i class="fas fa-book"></i> FCTs <a href="{{ path('fcts_new') }}"><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
         </div>
     </div>
     <table class="table table-bordered table-hover">
@@ -25,6 +25,20 @@
         </tr>
         </thead>
         <tbody>
+            {% for fct in fcts %}
+                <tr class="text-center">
+                    <th scope="row">{{ fct.alumno.nombre }}</th>
+                    <td>{{ fct.empresa.nombre }}</td>
+                    <td>{{ fct.profesor.nombre }}</td>
+                    <td>{{ fct.ciclo.nombre }} ({{ fct.ciclo.codigo }})</td>
+                    <td>{{ fct.anio }}</td>
+                    <td>{{ fct.periodo }}</td>
+                    <td><a role="button" href="{{ path('alumnos_show', {'id': fct.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
+                        <a role="button" href="{{ path('alumnos_edit', {'id': fct.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                        <a role="button" href="{{ path('alumnos_delete', {'id': fct.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

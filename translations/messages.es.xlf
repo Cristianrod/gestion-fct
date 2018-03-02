@@ -18,6 +18,10 @@
                 <source>nav.empresas</source>
                 <target>Empresas</target>
             </trans-unit>
+            <trans-unit id="nav.fct">
+                <source>nav.fct</source>
+                <target>FCTs</target>
+            </trans-unit>
             <trans-unit id="label.nodata">
                 <source>label.nodata</source>
                 <target>Sin especificar</target>

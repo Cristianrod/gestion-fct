@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Incio - Fcts{% endblock %}
+{% block container %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="{{ path('incio') }}">Incio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">FCTs</li>
+        </ol>
+    </nav>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1><i class="fas fa-book"></i> FCTs <a href=""><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">Alumno</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">Profesor</th>
+            <th scope="col">Ciclo</th>
+            <th scope="col">Año</th>
+            <th scope="col">Periodo</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+{% endblock %}

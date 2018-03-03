@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Ciclo;
 use App\Entity\Profesor;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -39,6 +41,11 @@ class ProfesorType extends AbstractType
             ])
             ->add('correo', null, [
                 'label' => 'label.correo',
+            ])
+            ->add('ciclos', EntityType::class, [
+                'class' => Ciclo::class,
+                'choice_label' => 'nombre',
+                'multiple' => true,
             ])
         ;
     }

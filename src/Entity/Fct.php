@@ -26,26 +26,31 @@ class Fct
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $periodo;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Profesor", inversedBy="fcts")
+     * @Assert\NotBlank()
      */
     private $profesor;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Alumno", inversedBy="fcts")
+     * @Assert\NotBlank()
      */
     private $alumno;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Empresa", inversedBy="fcts")
+     * @Assert\NotBlank()
      */
     private $empresa;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Ciclo", inversedBy="fcts")
+     * @Assert\NotBlank()
      */
     private $ciclo;
 

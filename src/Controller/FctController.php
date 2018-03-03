@@ -6,6 +6,7 @@ use App\Entity\Fct;
 use App\Form\FctType;
 use App\Repository\FctRepository;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -37,6 +38,7 @@ class FctController extends Controller
     /**
      * @param Request $request
      * @Route("/agregar", name="fcts_new")
+     * @Method({"GET", "POST"})
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public  function new(Request $request)

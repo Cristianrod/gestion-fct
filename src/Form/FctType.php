@@ -8,11 +8,13 @@ use App\Entity\Empresa;
 use App\Entity\Fct;
 use App\Entity\Profesor;
 use Doctrine\ORM\EntityRepository;
-use function Sodium\add;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FctType extends AbstractType
@@ -24,37 +26,14 @@ class FctType extends AbstractType
                 'label' => 'label.ciclo',
                 'class' => Ciclo::class,
                 'query_builder' => function(EntityRepository $er){
-                    return $er->createQueryBuilder('p')
-                        ->orderBy('p.nombre', 'ASC');
+                    return $er->createQueryBuilder('c')
+                        ->orderBy('c.nombre', 'ASC');
                 },
                 'choice_label' => function ($ciclo){
                     /* @var \App\Entity\Ciclo $ciclo*/
                     return $ciclo->getNombre() .' (' . $ciclo->getCodigo() . ')';
                 },
-            ])
-            ->add('alumno', EntityType::class, [
-                'label' => 'label.alumno',
-                'class' => Alumno::class,
-                'query_builder' => function (EntityRepository $er){
-                    return $er->createQueryBuilder('a')
-                        ->orderBy('a.nombre', 'ASC');
-                },
-                'choice_label' => function ($alumno){
-                    /* @var Alumno $alumno*/
-                    return $alumno->getNombre() . ' ' . $alumno->getApellido1() . ' ' . $alumno->getApellido2();
-                },
-            ])
-            ->add('profesor', EntityType::class, [
-                'label' => 'label.profesor',
-                'class' => Profesor::class,
-                'query_builder' => function (EntityRepository $er){
-                    return $er->createQueryBuilder('p')
-                        ->orderBy('p.nombre', 'ASC');
-                },
-                'choice_label' => function ($profesor){
-                    /* @var Profesor $profesor*/
-                    return $profesor->getNombre() . ' ' . $profesor->getApellido1() . ' ' . $profesor->getApellido2();
-                },
+                'placeholder' => '',
             ])
             ->add('empresa', EntityType::class, [
                 'label' => 'label.empresa',
@@ -64,6 +43,7 @@ class FctType extends AbstractType
                         ->orderBy('e.nombre', 'ASC');
                 },
                 'choice_label' => 'nombre',
+                'placeholder' => '',
             ])
             ->add('anio', null, [
                 'label' => 'label.anio',
@@ -74,10 +54,46 @@ class FctType extends AbstractType
                     'Periodo 1' => 'Periodo 1',
                     'Periodo 2' => 'Periodo 2',
                     'Periodo 3' => 'Periodo 3',
-                ]
+                ],
+                'placeholder' => ''
             ])
         ;
-        ;
+
+        $ajaxForm = function (FormInterface $form, Ciclo $ciclo = null){
+            $alumnos = null === $ciclo ? [] : $ciclo->getAlumnos();
+            $profesores = null === $ciclo ? [] : $ciclo->getProfesores();
+
+            $form->add('alumno', EntityType::class, [
+                'label' => 'label.alumno',
+                'class' => Alumno::class,
+                'placeholder' => '',
+                'choices' => $alumnos,
+                'choice_label' => 'nombre',
+            ]);
+            $form->add('profesor', EntityType::class, [
+                'label' => 'label.profesor',
+                'class' => Profesor::class,
+                'placeholder' => '',
+                'choices' => $profesores,
+                'choice_label' => 'nombre',
+            ]);
+        };
+
+        $builder->addEventListener(
+            FormEvents::PRE_SET_DATA,
+            function (FormEvent $event) use ($ajaxForm){
+                $valores = $event->getData();
+                $ajaxForm($event->getForm(), $valores->getCiclo());
+            }
+        );
+
+        $builder->get('ciclo')->addEventListener(
+            FormEvents::POST_SUBMIT,
+            function (FormEvent $event) use ($ajaxForm){
+                $ciclo = $event->getForm()->getData();
+                $ajaxForm($event->getForm()->getParent(), $ciclo);
+            }
+        );
     }
 
     public function configureOptions(OptionsResolver $resolver)

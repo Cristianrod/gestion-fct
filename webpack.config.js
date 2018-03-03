@@ -8,6 +8,7 @@ Encore
     .enableSourceMaps(!Encore.isProduction())
     // .enableVersioning(Encore.isProduction())
     .addEntry('js/app', './assets/js/app.js')
+    .addEntry('js/fct', './assets/js/fct.js')
     .addStyleEntry('css/app', './assets/css/app.scss')
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: false

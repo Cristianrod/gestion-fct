@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}Alumnos - Listado{% endblock %}
+{% block header %}
+{% endblock %}
+{% block container %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1>Alumnos</h1>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">NIF</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Ciclo</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for alumno in alumnos %}
+            <tr class="text-center">
+                <th scope="row">{{ alumno.nif }}</th>
+                <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
+                <td>{{ alumno.correo }}</td>
+                <td>{{ alumno.ciclo.codigo }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Alumno;
 use App\Form\AlumnoType;
 use App\Repository\AlumnoRepository;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -70,7 +71,7 @@ class AlumnoController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="alumnos_show")
+     * @Route("/{id}", requirements={"id": "\d+"}, name="alumnos_show")
      * @Method("GET")
      * @param Alumno $alumno
      * @return Response
@@ -134,5 +135,23 @@ class AlumnoController extends Controller
             'alumno' => $alumno,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/pdf", name="pdf_alumnos")
+     * @return Response
+     */
+    public function pdf(): Response
+    {
+        $alumnoRepo = $this->getDoctrine()->getRepository(Alumno::class);
+        $alumnos = $alumnoRepo->findAll();
+        $html = $this->renderView('pdf/alumnos.html.twig', [
+            'alumnos' => $alumnos
+        ]);
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            'listadoalumnos.pdf'
+        );
     }
 }

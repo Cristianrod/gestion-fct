@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Empresa;
 use App\Form\EmpresaType;
 use App\Repository\EmpresaRepository;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -68,7 +69,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="empresas_show")
+     * @Route("/{id}", requirements={"id": "\d+"}, name="empresas_show")
      * @param Empresa $empresa
      * @return Response
      */
@@ -131,5 +132,24 @@ class EmpresaController extends Controller
         return $this->render('empresa/delete.html.twig',[
             'empresa' => $empresa,
         ]);
+    }
+
+
+    /**
+     * @Route("/pdf", name="pdf_empresas")
+     * @return Response
+     */
+    public function pdf(): Response
+    {
+        $empresaRepo = $this->getDoctrine()->getRepository(Empresa::class);
+        $empresas = $empresaRepo->findAll();
+        $html = $this->renderView('pdf/empresas.html.twig', [
+            'empresas' => $empresas
+        ]);
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            'listadoempresas.pdf'
+        );
     }
 }

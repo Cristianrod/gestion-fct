@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Empresas - Listado{% endblock %}
+{% block header %}
+{% endblock %}
+{% block container %}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1>Empresas</h1>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">CIF</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tutor</th>
+            <th scope="col">Correo</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for empresa in empresas %}
+            <tr class="text-center">
+                <th scope="row">{{ empresa.cif }}</th>
+                <td>{{ empresa.nombre }}</td>
+                <td>{{ empresa.nombreTutor }}</td>
+                <td>{{ empresa.correo }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

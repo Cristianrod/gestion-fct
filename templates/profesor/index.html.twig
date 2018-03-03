@@ -44,4 +44,9 @@
             {{ pagerfanta(profesores, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
         </nav>
     {% endif %}
+    {% if profesores|length > 0 %}
+        <div>
+            <p class="text-center"><a href="{{ path('pdf_profesores') }}">Generar listado en PDF</a></p>
+        </div>
+    {% endif %}
 {% endblock %}

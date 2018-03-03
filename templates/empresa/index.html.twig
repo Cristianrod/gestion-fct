@@ -42,4 +42,9 @@
             {{ pagerfanta(empresas, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
         </nav>
     {% endif %}
+    {% if empresas|length > 0 %}
+        <div>
+            <p class="text-center"><a href="{{ path('pdf_empresas') }}">Generar listado en PDF</a></p>
+        </div>
+    {% endif %}
 {% endblock %}

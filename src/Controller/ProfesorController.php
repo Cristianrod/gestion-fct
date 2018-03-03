@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Profesor;
 use App\Form\ProfesorType;
 use App\Repository\ProfesorRepository;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -69,7 +70,7 @@ class ProfesorController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="profesores_show")
+     * @Route("/{id}", requirements={"id": "\d+"}, name="profesores_show")
      * @param Profesor $profesor
      * @return Response
      */
@@ -132,5 +133,23 @@ class ProfesorController extends Controller
             'profesor' => $profesor,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/pdf", name="pdf_profesores")
+     * @return PdfResponse
+     */
+    public function pdf()
+    {
+        $profesorRepo = $this->getDoctrine()->getRepository(Profesor::class);
+        $profesores = $profesorRepo->findAll();
+        $html = $this->renderView('pdf/profesores.html.twig', [
+            'profesores' => $profesores
+        ]);
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+            'listadoprofesores.pdf'
+        );
     }
 }

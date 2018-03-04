@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProfesorRepository")
@@ -15,14 +16,14 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @UniqueEntity("nif")
  * @Vich\Uploadable
  */
-class Profesor
+class Profesor extends BaseUser
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string")
@@ -99,12 +100,6 @@ class Profesor
     private $fechaSubida;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank()
-     */
-    private $usuario;
-
-    /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      * @Assert\Regex(
@@ -122,15 +117,6 @@ class Profesor
      * )
      */
     private $fijo;
-
-    /**
-     * @Assert\Email(
-     *     message="valid.correo"
-     * )
-     * @Assert\NotBlank()
-     * @ORM\Column(type="string", length=100)
-     */
-    private $correo;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Ciclo", inversedBy="profesores")

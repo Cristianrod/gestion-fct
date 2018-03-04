@@ -104,6 +104,8 @@
       <path value="$PROJECT_DIR$/vendor/wkhtmltox/bin" />
       <path value="$PROJECT_DIR$/vendor/wkhtmltox/lib" />
       <path value="$PROJECT_DIR$/vendor/wkhtmltox/include" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

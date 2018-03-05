@@ -32,16 +32,17 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ path('fcts') }}">{{ 'nav.fct'|trans }} <span class="sr-only">(current)</span></a>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
                         {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ path('fos_user_security_logout') }}">{{ 'nav.cerrarSesion'|trans }} <span class="sr-only">(current)</span></a>
                             </li>
                         {% else %}
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{ 'nav.iniciarSesion'|trans }} <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{ path('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i> {{ 'nav.iniciarSesion'|trans }} <span class="sr-only">(current)</span></a>
                             </li>
                         {% endif %}
-
                     </ul>
                 </div>
             </nav>
@@ -66,6 +67,13 @@
                     </div>
                 </div>
             </div>
+            {% block footer %}
+                <div class="footer">
+                    <div class="container text-center">
+                        <span class="text-muted">Cristian Rodríguez Ruiz - 2º DAW (2018)</span>
+                    </div>
+                </div>
+            {% endblock %}
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('build/manifest.js') }}"></script>

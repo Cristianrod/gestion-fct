@@ -3,29 +3,28 @@
 {% block header %}
 {% endblock %}
 {% block container %}
-    <div class="card mb-4">
-        <div class="card-body">
-            <h1>Profesores</h1>
-        </div>
-    </div>
-    <table class="table table-bordered table-hover">
+    <h1 style="text-align: center;">Profesores</h1>
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
         <thead>
-        <tr class="text-center">
-            <th scope="col">NIF</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Correo</th>
+        <tr style="border: 1px solid black; border-collapse: collapse;">
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">NIF</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Nombre</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Apellidos</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Usuario</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Correo</th>
         </tr>
         </thead>
         <tbody>
         {% for profesor in profesores %}
-            <tr class="text-center">
-                <th scope="row">{{ profesor.nif }}</th>
-                <td>{{ profesor.nombre }}</td>
-                <td>{{ profesor.apellido1 }} {{ profesor.apellido2 }}</td>
-                <td>{{ profesor.correo }}</td>
+            <tr style="border: 1px solid black; border-collapse: collapse; text-align: center;" >
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="row">{{ profesor.nif }}</th>
+                <td style="border: 1px solid black; border-collapse: collapse;" >{{ profesor.nombre }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;" >{{ profesor.apellido1 }} {{ profesor.apellido2 }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;" >{{ profesor.username }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;" >{{ profesor.email }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 {% endblock %}
+{% block footer %}{% endblock %}

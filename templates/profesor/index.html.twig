@@ -45,8 +45,8 @@
         </nav>
     {% endif %}
     {% if profesores|length > 0 %}
-        <div>
-            <p class="text-center"><a href="{{ path('pdf_profesores') }}">Generar listado en PDF</a></p>
+        <div class="text-center">
+            <a role="button" href="{{ path('pdf_profesores') }}" class="btn btn-secondary pdf"><i class="fas fa-file-pdf"></i> Generar listado en PDF</a>
         </div>
     {% endif %}
 {% endblock %}

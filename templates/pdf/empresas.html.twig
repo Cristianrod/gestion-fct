@@ -3,29 +3,28 @@
 {% block header %}
 {% endblock %}
 {% block container %}
-    <div class="card mb-4">
-        <div class="card-body">
-            <h1>Empresas</h1>
-        </div>
-    </div>
-    <table class="table table-bordered table-hover">
+    <h1 style="text-align: center;">Empresas</h1>
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
         <thead>
-        <tr class="text-center">
-            <th scope="col">CIF</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Tutor</th>
-            <th scope="col">Correo</th>
+        <tr style="border: 1px solid black; border-collapse: collapse;" class="text-center">
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">CIF</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Nombre</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Tutor</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Correo</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Móvil</th>
         </tr>
         </thead>
         <tbody>
         {% for empresa in empresas %}
-            <tr class="text-center">
-                <th scope="row">{{ empresa.cif }}</th>
-                <td>{{ empresa.nombre }}</td>
-                <td>{{ empresa.nombreTutor }}</td>
-                <td>{{ empresa.correo }}</td>
+            <tr style="border: 1px solid black; border-collapse: collapse; text-align: center;" class="text-center">
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="row">{{ empresa.cif }}</th>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ empresa.nombre }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ empresa.nombreTutor }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ empresa.correo }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ empresa.movil }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 {% endblock %}
+{% block footer %}{% endblock %}

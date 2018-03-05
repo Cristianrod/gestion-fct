@@ -15,7 +15,7 @@
                 <target>El Teléfono Fijo introducido no es correcto</target>
             </trans-unit>
             <trans-unit id="valid.movil">
-                <source>valid.fijo</source>
+                <source>valid.movil</source>
                 <target>El Móvil introducido no es correcto</target>
             </trans-unit>
             <trans-unit id="valid.correo">

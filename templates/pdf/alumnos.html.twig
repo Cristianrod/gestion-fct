@@ -3,31 +3,28 @@
 {% block header %}
 {% endblock %}
 {% block container %}
-    <div class="card mb-4">
-        <div class="card-body">
-            <h1>Alumnos</h1>
-        </div>
-    </div>
-    <table class="table table-bordered table-hover">
+    <h1 style="text-align: center;">Alumnos</h1>
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
         <thead>
-        <tr class="text-center">
-            <th scope="col">NIF</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Correo</th>
-            <th scope="col">Ciclo</th>
-        </tr>
+            <tr style="border: 1px solid black; border-collapse: collapse;">
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">NIF</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Nombre</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Apellidos</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Correo</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Ciclo</th>
+            </tr>
         </thead>
         <tbody>
-        {% for alumno in alumnos %}
-            <tr class="text-center">
-                <th scope="row">{{ alumno.nif }}</th>
-                <td>{{ alumno.nombre }}</td>
-                <td>{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
-                <td>{{ alumno.correo }}</td>
-                <td>{{ alumno.ciclo.codigo }}</td>
-            </tr>
-        {% endfor %}
+            {% for alumno in alumnos %}
+                <tr style="border: 1px solid black; border-collapse: collapse; text-align: center;">
+                    <th style="border: 1px solid black; border-collapse: collapse;" scope="row">{{ alumno.nif }}</th>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ alumno.nombre }}</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ alumno.apellido1 }} {{ alumno.apellido2 }}</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ alumno.correo }}</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ alumno.ciclo.codigo }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}
+{% block footer %}{% endblock %}

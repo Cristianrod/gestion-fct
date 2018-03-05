@@ -6,9 +6,12 @@ use App\Entity\Ciclo;
 use App\Entity\Profesor;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\UserBundle\Form\Type\ProfileFormType as BaseProfileFormType;
 
 class ProfesorType extends AbstractType
 {
@@ -30,8 +33,14 @@ class ProfesorType extends AbstractType
             ->add('fichero', FileType::class, [
                 'label' => 'label.foto',
             ])
-            ->add('usuario', null, [
+            ->add('username', null, [
                 'label' => 'label.usuario',
+            ])
+            ->add('email', null, [
+                'label' => 'label.correo',
+            ])
+            ->add('plainPassword', null, [
+                'label' => 'label.contra',
             ])
             ->add('movil', null, [
                 'label' => 'label.movil',
@@ -39,13 +48,23 @@ class ProfesorType extends AbstractType
             ->add('fijo', null, [
                 'label' => 'label.tlf',
             ])
-            ->add('correo', null, [
-                'label' => 'label.correo',
-            ])
             ->add('ciclos', EntityType::class, [
+                'label' => 'label.ciclo',
                 'class' => Ciclo::class,
                 'choice_label' => 'nombre',
                 'multiple' => true,
+            ])
+            ->add('roles', ChoiceType::class, [
+                'label' => 'label.roles',
+                'choices' => [
+                    'choice.profesor' => 'ROLE_USER',
+                    'choice.direccion' => 'ROLE_ADMIN'
+                ],
+                'multiple' => true,
+            ])
+            ->add('enabled', CheckboxType::class, [
+                'label' => 'label.activo',
+                'attr' => ['checked'   => 'checked'],
             ])
         ;
     }

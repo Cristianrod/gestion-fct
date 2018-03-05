@@ -30,7 +30,7 @@
                     <th scope="row">{{ profesor.nif }}</th>
                     <td>{{ profesor.nombre }}</td>
                     <td>{{ profesor.apellido1 }} {{ profesor.apellido2 }}</td>
-                    <td>{{ profesor.correo }}</td>
+                    <td>{{ profesor.email }}</td>
                     <td><a role="button" href="{{ path('profesores_show', {'id': profesor.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
                         <a role="button" href="{{ path('profesores_edit', {'id': profesor.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
                         <a role="button" href="{{ path('profesores_delete', {'id': profesor.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>

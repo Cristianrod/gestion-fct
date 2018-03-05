@@ -20,7 +20,7 @@ class Profesor extends BaseUser
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     protected $id;
@@ -153,6 +153,7 @@ class Profesor extends BaseUser
 
     public function __construct()
     {
+        parent::__construct();
         $this->fcts = new ArrayCollection();
         $this->ciclos = new ArrayCollection();
     }
@@ -268,22 +269,6 @@ class Profesor extends BaseUser
     /**
      * @return mixed
      */
-    public function getUsuario()
-    {
-        return $this->usuario;
-    }
-
-    /**
-     * @param mixed $usuario
-     */
-    public function setUsuario($usuario): void
-    {
-        $this->usuario = $usuario;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getMovil()
     {
         return $this->movil;
@@ -311,21 +296,5 @@ class Profesor extends BaseUser
     public function setFijo($fijo): void
     {
         $this->fijo = $fijo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCorreo()
-    {
-        return $this->correo;
-    }
-
-    /**
-     * @param mixed $correo
-     */
-    public function setCorreo($correo): void
-    {
-        $this->correo = $correo;
     }
 }

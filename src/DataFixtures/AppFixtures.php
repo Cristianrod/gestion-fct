@@ -9,6 +9,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Ciclo;
+use App\Entity\Profesor;
 use App\Entity\Provincia;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -26,16 +27,6 @@ class AppFixtures extends Fixture
         }
 
         $ciclos = $this->generarCiclos();
-//        foreach ($ciclos as $codigo => $nombre){
-//            foreach ($nombre as $valor){
-//                $ciclo = new Ciclo();
-//                $ciclo->setCodigo($codigo);
-//                $ciclo->setNombre($valor);
-//                $ciclo->setGrado($valor);
-//                $ciclo->setHoras($valor);
-//                $manager->persist($ciclo);
-//            }
-//        }
         foreach ($ciclos as $valorCiclo){
             $ciclo = new Ciclo();
             $ciclo->setCodigo($valorCiclo['codigo']);
@@ -44,6 +35,10 @@ class AppFixtures extends Fixture
             $ciclo->setHoras($valorCiclo['horas']);
             $manager->persist($ciclo);
         }
+
+        $profesor = $this->generarAdmin();
+        $manager->persist($profesor);
+
         $manager->flush();
     }
 
@@ -63,5 +58,22 @@ class AppFixtures extends Fixture
             ['codigo' => 'GA', 'nombre' => 'Gestión Administrativa', 'grado' => 'Medio', 'horas' => 2000],
             ['codigo' => 'AC', 'nombre' => 'Actividades Comerciales', 'grado' => 'Medio', 'horas' => 2000],
         ];
+    }
+
+    public function generarAdmin()
+    {
+        $profesor = new Profesor();
+        $profesor->setNif("49324467H");
+        $profesor->setNombre("admin");
+        $profesor->setApellido1("admin");
+        $profesor->setApellido2("admin");
+        $profesor->setMovil("654321778");
+        $profesor->setUsername("admin");
+        $profesor->setPlainPassword("admin");
+        $profesor->setEmail("admin@mail.com");
+        $profesor->setEnabled(true);
+        $profesor->setRoles(['ROLE_ADMIN']);
+
+        return $profesor;
     }
 }

@@ -1,7 +1,7 @@
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: AppBundle\Entity\Profesor
+    user_class: App\Entity\Profesor
     from_email:
         address: "gestionfct@mail.com"
         sender_name: "GestionFCT"

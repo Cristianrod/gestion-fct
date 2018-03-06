@@ -17,7 +17,13 @@
             <li class="list-group-item"><span class="font-weight-bold">NIF:</span> {{ profesor.nif }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Nombre:</span> {{ profesor.nombre }}</li>
             <li class="list-group-item"><span class="font-weight-bold">Apellidos:</span> {{ profesor.apellido1 }} {{ profesor.apellido2 }}</li>
-            <li class="list-group-item"><span class="font-weight-bold">Usuario:</span> {{ profesor.username }}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Usuario:</span> {{ profesor.username }}
+                {% if "ROLE_ADMIN" in profesor.roles %}
+                    (Dirección)
+                {% else %}
+                    (Profesor)
+                {% endif %}
+            </li>
         </ul>
         <ul class="list-group col-sm-12 col-md-12 mt-2">
             <li class="list-group-item text-light mb-0 bg-warning font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-address-card"></i> Contacto</h3></li>

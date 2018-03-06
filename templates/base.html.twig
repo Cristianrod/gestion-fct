@@ -20,21 +20,23 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="/"><i class="fas fa-home"></i> {{ 'nav.inicio'|trans }} <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('alumnos') }}"><i class="fas fa-graduation-cap"></i> {{ 'nav.alumnos'|trans }} <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('profesores') }}"><i class="fas fa-briefcase"></i> {{ 'nav.profesores'|trans }} <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('empresas') }}"><i class="fas fa-building"></i> {{ 'nav.empresas'|trans }} <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('fcts') }}"><i class="fas fa-book"></i> {{ 'nav.fct'|trans }} <span class="sr-only">(current)</span></a>
-                        </li>
+                        {% if is_granted('ROLE_USER') %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('alumnos') }}"><i class="fas fa-graduation-cap"></i> {{ 'nav.alumnos'|trans }} <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('profesores') }}"><i class="fas fa-briefcase"></i> {{ 'nav.profesores'|trans }} <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('empresas') }}"><i class="fas fa-building"></i> {{ 'nav.empresas'|trans }} <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('fcts') }}"><i class="fas fa-book"></i> {{ 'nav.fct'|trans }} <span class="sr-only">(current)</span></a>
+                            </li>
+                        {% endif %}
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+                        {% if is_granted('ROLE_USER') %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ path('fos_user_security_logout') }}"><i class="fas fa-sign-out-alt"></i> {{ 'nav.cerrarSesion'|trans }} <span class="sr-only">(current)</span></a>
                             </li>

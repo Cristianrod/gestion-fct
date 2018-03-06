@@ -8,6 +8,7 @@ use App\Repository\FctRepository;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,6 +26,7 @@ class FctController extends Controller
      * @param Request $request
      * @param FctRepository $fcts
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function index(Request $request, FctRepository $fcts): Response
     {
@@ -40,6 +42,7 @@ class FctController extends Controller
      * @Route("/agregar", name="fcts_new")
      * @Method({"GET", "POST"})
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public  function new(Request $request)
     {
@@ -74,6 +77,7 @@ class FctController extends Controller
      * @param Request $request
      * @param Fct $fct *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function edit(Request $request, Fct $fct)
     {
@@ -106,6 +110,7 @@ class FctController extends Controller
      * @param Request $request
      * @param Fct $fct
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function delete(Request $request, Fct $fct)
     {
@@ -125,6 +130,7 @@ class FctController extends Controller
     /**
      * @Route("/pdf", name="pdf_fcts")
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function pdf(): Response
     {

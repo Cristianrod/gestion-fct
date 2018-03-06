@@ -49,9 +49,11 @@
             {{ pagerfanta(alumnos, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
         </nav>
     {% endif %}
-    {% if alumnos|length > 0 %}
-        <div class="text-center">
-            <a role="button" href="{{ path('pdf_alumnos') }}" class="btn btn-secondary pdf"><i class="fas fa-file-pdf"></i> Generar listado en PDF</a>
-        </div>
+    {% if is_granted('ROLE_USER') %}
+        {% if alumnos|length > 0 %}
+            <div class="text-center">
+                <a role="button" href="{{ path('pdf_alumnos') }}" class="btn btn-secondary pdf"><i class="fas fa-file-pdf"></i> Generar listado en PDF</a>
+            </div>
+        {% endif %}
     {% endif %}
 {% endblock %}

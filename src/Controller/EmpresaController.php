@@ -8,6 +8,7 @@ use App\Repository\EmpresaRepository;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,6 +26,7 @@ class EmpresaController extends Controller
      * @param Request $request
      * @param EmpresaRepository $empresas
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function index(Request $request, EmpresaRepository $empresas): Response
     {
@@ -39,6 +41,7 @@ class EmpresaController extends Controller
      * @Route("/agregar", name="empresas_new")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function new(Request $request)
     {
@@ -72,6 +75,7 @@ class EmpresaController extends Controller
      * @Route("/{id}", requirements={"id": "\d+"}, name="empresas_show")
      * @param Empresa $empresa
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function show(Empresa $empresa): Response
     {
@@ -86,6 +90,7 @@ class EmpresaController extends Controller
      * @param Request $request
      * @param Empresa $empresa
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function edit(Request $request, Empresa $empresa): Response
     {
@@ -119,6 +124,7 @@ class EmpresaController extends Controller
      * @param Request $request
      * @param Empresa $empresa
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function delete(Request $request, Empresa $empresa): Response
     {
@@ -138,6 +144,7 @@ class EmpresaController extends Controller
     /**
      * @Route("/pdf", name="pdf_empresas")
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function pdf(): Response
     {

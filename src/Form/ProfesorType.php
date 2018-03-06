@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Ciclo;
 use App\Entity\Profesor;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -48,12 +47,6 @@ class ProfesorType extends AbstractType
                 'label' => 'label.correo',
                 'constraints' => [
                     new Email(),
-                    new NotBlank(),
-                ]
-            ])
-            ->add('plainPassword', PasswordType::class, [
-                'label' => 'label.contra',
-                'constraints' => [
                     new NotBlank(),
                 ]
             ])

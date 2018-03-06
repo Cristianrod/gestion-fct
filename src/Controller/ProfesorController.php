@@ -8,10 +8,13 @@ use App\Repository\ProfesorRepository;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Class ProfesorController
@@ -25,6 +28,7 @@ class ProfesorController extends Controller
      * @param Request $request
      * @param ProfesorRepository $profesores
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function index(Request $request, ProfesorRepository $profesores): Response
     {
@@ -39,11 +43,18 @@ class ProfesorController extends Controller
      * @Route("/agregar", name="profesores_new")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function new(Request $request): Response
     {
         $profesor = new Profesor();
         $form = $this->createForm(ProfesorType::class, $profesor)
+            ->add('plainPassword', PasswordType::class, [
+                'label' => 'label.contra',
+                'constraints' => [
+                    new NotBlank(),
+                ]
+            ])
             ->add('crear', SubmitType::class, [
                 'label' => 'label.crearProfesor',
                 'attr' => [
@@ -73,6 +84,7 @@ class ProfesorController extends Controller
      * @Route("/{id}", requirements={"id": "\d+"}, name="profesores_show")
      * @param Profesor $profesor
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function show(Profesor $profesor): Response
     {
@@ -87,6 +99,7 @@ class ProfesorController extends Controller
      * @param Request $request
      * @param Profesor $profesor
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function delete(Request $request, Profesor $profesor): Response
     {
@@ -107,10 +120,14 @@ class ProfesorController extends Controller
      * @param Request $request
      * @param Profesor $profesor
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function edit(Request $request, Profesor $profesor): Response
     {
         $form = $this->createForm(ProfesorType::class, $profesor)
+            ->add('plainPassword', PasswordType::class, [
+                'label' => 'label.contra',
+            ])
             ->add('editar', SubmitType::class, [
                 'label' => 'label.editarProfesor',
                 'attr' => [
@@ -138,6 +155,7 @@ class ProfesorController extends Controller
     /**
      * @Route("/pdf", name="pdf_profesores")
      * @return PdfResponse
+     * @Security("has_role('ROLE_USER')")
      */
     public function pdf()
     {

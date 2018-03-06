@@ -9,7 +9,12 @@
     </nav>
     <div class="card mb-4">
         <div class="card-body">
-            <h1><i class="fas fa-building"></i> Empresas <a href="{{ path('empresas_new') }}"><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
+            <h1><i class="fas fa-building"></i> Empresas <a href="{{ path('empresas_new') }}">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <i class="fas fa-plus-square text-primary float-right"></i>
+                    {% endif %}
+                </a>
+            </h1>
         </div>
     </div>
     <table class="table table-bordered table-hover">
@@ -29,9 +34,12 @@
                 <td>{{ empresa.nombre }}</td>
                 <td>{{ empresa.nombreTutor }}</td>
                 <td>{{ empresa.correo }}</td>
-                <td><a role="button" href="{{ path('empresas_show', {'id': empresa.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
-                    <a role="button" href="{{ path('empresas_edit', {'id': empresa.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
-                    <a role="button" href="{{ path('empresas_delete', {'id': empresa.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                <td>
+                    <a role="button" href="{{ path('empresas_show', {'id': empresa.id}) }}" class="btn btn-primary mb-1 mb-sm-1 mb-md-0"><i class="fas fa-user"></i></a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a role="button" href="{{ path('empresas_edit', {'id': empresa.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                        <a role="button" href="{{ path('empresas_delete', {'id': empresa.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
@@ -42,9 +50,11 @@
             {{ pagerfanta(empresas, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
         </nav>
     {% endif %}
-    {% if empresas|length > 0 %}
-        <div class="text-center">
-            <a role="button" href="{{ path('pdf_empresas') }}" class="btn btn-secondary pdf"><i class="fas fa-file-pdf"></i> Generar listado en PDF</a>
-        </div>
+    {% if is_granted('ROLE_USER') %}
+        {% if empresas|length > 0 %}
+            <div class="text-center">
+                <a role="button" href="{{ path('pdf_empresas') }}" class="btn btn-secondary pdf"><i class="fas fa-file-pdf"></i> Generar listado en PDF</a>
+            </div>
+        {% endif %}
     {% endif %}
 {% endblock %}

@@ -14,6 +14,8 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @ORM\Entity(repositoryClass="App\Repository\ProfesorRepository")
  * @ORM\Table(name="profesores")
  * @UniqueEntity("nif")
+ * @UniqueEntity("email")
+ * @UniqueEntity("username")
  * @Vich\Uploadable
  */
 class Profesor extends BaseUser

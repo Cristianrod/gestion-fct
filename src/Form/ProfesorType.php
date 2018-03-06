@@ -5,13 +5,18 @@ namespace App\Form;
 use App\Entity\Ciclo;
 use App\Entity\Profesor;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\UserBundle\Form\Type\ProfileFormType as BaseProfileFormType;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ProfesorType extends AbstractType
 {
@@ -35,12 +40,22 @@ class ProfesorType extends AbstractType
             ])
             ->add('username', null, [
                 'label' => 'label.usuario',
+                'constraints' => [
+                    new NotBlank(),
+                ]
             ])
-            ->add('email', null, [
+            ->add('email', EmailType::class, [
                 'label' => 'label.correo',
+                'constraints' => [
+                    new Email(),
+                    new NotBlank(),
+                ]
             ])
-            ->add('plainPassword', null, [
+            ->add('plainPassword', PasswordType::class, [
                 'label' => 'label.contra',
+                'constraints' => [
+                    new NotBlank(),
+                ]
             ])
             ->add('movil', null, [
                 'label' => 'label.movil',
@@ -61,6 +76,9 @@ class ProfesorType extends AbstractType
                     'choice.direccion' => 'ROLE_ADMIN'
                 ],
                 'multiple' => true,
+                'constraints' => [
+                    new NotBlank(),
+                ]
             ])
             ->add('enabled', CheckboxType::class, [
                 'label' => 'label.activo',

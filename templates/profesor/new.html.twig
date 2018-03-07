@@ -12,7 +12,14 @@
         <div class="col-md-12">
             {{ form_start(form, { attr: {novalidate: 'novalidate'}}) }}
             {{ form_errors(form) }}
-            {{ form_widget(form) }}
+                {{ form_row(form.nif) }}
+                {{ form_row(form.nombre) }}
+                {{ form_row(form.apellido1) }}
+                {{ form_row(form.apellido2) }}
+                {{ form_row(form.fichero) }}
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.plainPassword) }}
             {{ form_end(form) }}
         </div>
     </div>

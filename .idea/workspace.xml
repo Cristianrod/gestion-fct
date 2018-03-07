@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35e23e3-8503-4d16-ac0a-a726baf22529" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/alumno/show.html.twig" afterPath="$PROJECT_DIR$/templates/alumno/show.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,33 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Profile/show.html.twig">
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/alumno/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding>
-                <element signature="e#12#37#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="change_password.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/ChangePassword/change_password.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Security/login.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="42" lean-forward="true" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+            <state relative-caret-position="650">
+              <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -96,7 +73,6 @@
         <option value="$PROJECT_DIR$/templates/empresa/delete.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Alumno.php" />
         <option value="$PROJECT_DIR$/templates/empresa/show.html.twig" />
-        <option value="$PROJECT_DIR$/templates/alumno/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/AlumnoType.php" />
         <option value="$PROJECT_DIR$/templates/alumno/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/empresa/edit.html.twig" />
@@ -143,6 +119,7 @@
         <option value="$PROJECT_DIR$/templates/bundles/FOSUserBundle/Profile/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/bundles/FOSUserBundle/ChangePassword/change_password.html.twig" />
+        <option value="$PROJECT_DIR$/templates/alumno/show.html.twig" />
       </list>
     </option>
   </component>
@@ -510,16 +487,15 @@
       <workItem from="1520296571880" duration="172000" />
       <workItem from="1520360228081" duration="3025000" />
       <workItem from="1520374924764" duration="4498000" />
-      <workItem from="1520432148976" duration="4824000" />
+      <workItem from="1520432148976" duration="5878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214826000" />
+    <option name="totallyTimeSpent" value="215880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29122055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -787,13 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/alumno/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/empresa/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -832,16 +801,6 @@
         <state relative-caret-position="-180">
           <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/alumno/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,29 +871,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="42" lean-forward="true" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/ChangePassword/change_password.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Profile/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#12#37#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -949,7 +890,41 @@
     <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/ChangePassword/change_password.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Profile/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="e#12#37#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="42" lean-forward="true" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/alumno/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1068">
+          <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/alumno/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
           <folding />
         </state>
       </provider>

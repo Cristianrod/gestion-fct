@@ -9,7 +9,12 @@
     </nav>
     <div class="card mb-4">
         <div class="card-body">
-            <h1><i class="fas fa-book"></i> FCTs <a href="{{ path('fcts_new') }}"><i class="fas fa-plus-square text-primary float-right"></i></a></h1>
+            <h1><i class="fas fa-book"></i> FCTs <a href="{{ path('fcts_new') }}">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <i class="fas fa-plus-square text-primary float-right"></i>
+                    {% endif %}
+                </a>
+            </h1>
         </div>
     </div>
     <table class="table table-bordered table-hover">
@@ -21,7 +26,9 @@
             <th scope="col">Ciclo</th>
             <th scope="col">Año</th>
             <th scope="col">Periodo</th>
-            <th scope="col">Acciones</th>
+            {% if is_granted('ROLE_ADMIN') %}
+                <th scope="col">Acciones</th>
+            {% endif %}
         </tr>
         </thead>
         <tbody>
@@ -33,10 +40,12 @@
                     <td>{{ fct.ciclo.nombre }} ({{ fct.ciclo.codigo }})</td>
                     <td>{{ fct.anio }}</td>
                     <td>{{ fct.periodo }}</td>
-                    <td>
-                        <a role="button" href="{{ path('fcts_edit', {'id': fct.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
-                        <a role="button" href="{{ path('fcts_delete', {'id': fct.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
-                    </td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>
+                            <a role="button" href="{{ path('fcts_edit', {'id': fct.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
+                            <a role="button" href="{{ path('fcts_delete', {'id': fct.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>
@@ -46,9 +55,11 @@
             {{ pagerfanta(fcts, 'twitter_bootstrap4_translated', {'omitFirstPage': true, 'pageParameter': '[p]', 'css_container_class': 'pagination justify-content-center'}) }}
         </nav>
     {% endif %}
-    {% if fcts|length > 0 %}
-        <div>
-            <p class="text-center"><a href="{{ path('pdf_fcts') }}">Generar listado en PDF</a></p>
-        </div>
+    {% if is_granted('ROLE_USER') %}
+        {% if fcts|length > 0 %}
+            <div class="text-center">
+                <a role="button" href="{{ path('pdf_fcts') }}" class="btn btn-secondary pdf"><i class="fas fa-file-pdf"></i> Generar listado en PDF</a>
+            </div>
+        {% endif %}
     {% endif %}
 {% endblock %}

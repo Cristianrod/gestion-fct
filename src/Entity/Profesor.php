@@ -8,21 +8,24 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProfesorRepository")
  * @ORM\Table(name="profesores")
  * @UniqueEntity("nif")
+ * @UniqueEntity("email")
+ * @UniqueEntity("username")
  * @Vich\Uploadable
  */
-class Profesor
+class Profesor extends BaseUser
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string")
@@ -99,12 +102,6 @@ class Profesor
     private $fechaSubida;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank()
-     */
-    private $usuario;
-
-    /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      * @Assert\Regex(
@@ -122,15 +119,6 @@ class Profesor
      * )
      */
     private $fijo;
-
-    /**
-     * @Assert\Email(
-     *     message="valid.correo"
-     * )
-     * @Assert\NotBlank()
-     * @ORM\Column(type="string", length=100)
-     */
-    private $correo;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Ciclo", inversedBy="profesores")
@@ -167,6 +155,7 @@ class Profesor
 
     public function __construct()
     {
+        parent::__construct();
         $this->fcts = new ArrayCollection();
         $this->ciclos = new ArrayCollection();
     }
@@ -282,22 +271,6 @@ class Profesor
     /**
      * @return mixed
      */
-    public function getUsuario()
-    {
-        return $this->usuario;
-    }
-
-    /**
-     * @param mixed $usuario
-     */
-    public function setUsuario($usuario): void
-    {
-        $this->usuario = $usuario;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getMovil()
     {
         return $this->movil;
@@ -325,21 +298,5 @@ class Profesor
     public function setFijo($fijo): void
     {
         $this->fijo = $fijo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCorreo()
-    {
-        return $this->correo;
-    }
-
-    /**
-     * @param mixed $correo
-     */
-    public function setCorreo($correo): void
-    {
-        $this->correo = $correo;
     }
 }

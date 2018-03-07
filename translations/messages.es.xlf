@@ -22,6 +22,14 @@
                 <source>nav.fct</source>
                 <target>FCTs</target>
             </trans-unit>
+            <trans-unit id="nav.iniciarSesion">
+                <source>nav.iniciarSesion</source>
+                <target>Iniciar Sesión</target>
+            </trans-unit>
+            <trans-unit id="nav.cerrarSesion">
+                <source>nav.cerrarSesion</source>
+                <target>Cerrar Sesión</target>
+            </trans-unit>
             <trans-unit id="label.nodata">
                 <source>label.nodata</source>
                 <target>Sin especificar</target>
@@ -86,6 +94,10 @@
                 <source>label.usuario</source>
                 <target>Usuario</target>
             </trans-unit>
+            <trans-unit id="label.contra">
+                <source>label.contra</source>
+                <target>Contraseña</target>
+            </trans-unit>
             <trans-unit id="label.ciclo">
                 <source>label.ciclo</source>
                 <target>Ciclo</target>
@@ -109,6 +121,22 @@
             <trans-unit id="label.periodo">
                 <source>label.periodo</source>
                 <target>Periodo</target>
+            </trans-unit>
+            <trans-unit id="choice.profesor">
+                <source>choice.profesor</source>
+                <target>Profesor</target>
+            </trans-unit>
+            <trans-unit id="choice.direccion">
+                <source>choice.direccion</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="label.activo">
+                <source>label.activo</source>
+                <target>Activar</target>
+            </trans-unit>
+            <trans-unit id="label.roles">
+                <source>label.roles</source>
+                <target>Roles</target>
             </trans-unit>
             <trans-unit id="label.crearAlumno">
                 <source>label.crearAlumno</source>

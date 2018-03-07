@@ -3,33 +3,30 @@
 {% block header %}
 {% endblock %}
 {% block container %}
-    <div class="card mb-4">
-        <div class="card-body">
-            <h1>FCTs</h1>
-        </div>
-    </div>
-    <table class="table table-bordered table-hover">
+    <h1 style="text-align: center;">Alumnos</h1>
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
         <thead>
-        <tr class="text-center">
-            <th scope="col">Alumno</th>
-            <th scope="col">Empresa</th>
-            <th scope="col">Profesor</th>
-            <th scope="col">Ciclo</th>
-            <th scope="col">Año</th>
-            <th scope="col">Periodo</th>
-        </tr>
+            <tr style="border: 1px solid black; border-collapse: collapse;" class="text-center">
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Alumno</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Empresa</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Profesor</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Ciclo</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Año</th>
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Periodo</th>
+            </tr>
         </thead>
         <tbody>
-        {% for fct in fcts %}
-            <tr class="text-center">
-                <th scope="row">{{ fct.alumno.nombre }} {{ fct.alumno.apellido1 }} {{ fct.alumno.apellido2 }}</th>
-                <td>{{ fct.empresa.nombre }}</td>
-                <td>{{ fct.profesor.nombre }}</td>
-                <td>{{ fct.ciclo.nombre }} ({{ fct.ciclo.codigo }})</td>
-                <td>{{ fct.anio }}</td>
-                <td>{{ fct.periodo }}</td>
-            </tr>
-        {% endfor %}
+            {% for fct in fcts %}
+                <tr style="border: 1px solid black; border-collapse: collapse; text-align: center;">
+                    <th style="border: 1px solid black; border-collapse: collapse;" scope="row">{{ fct.alumno.nombre }} {{ fct.alumno.apellido1 }} {{ fct.alumno.apellido2 }}</th>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.empresa.nombre }}</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.profesor.nombre }}</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.ciclo.nombre }} ({{ fct.ciclo.codigo }})</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.anio }}</td>
+                    <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.periodo }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}
+{% block footer %}{% endblock %}

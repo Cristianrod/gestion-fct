@@ -8,6 +8,7 @@ use App\Repository\AlumnoRepository;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,6 +27,7 @@ class AlumnoController extends Controller
      * @param Request $request
      * @param AlumnoRepository $alumnos
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function index(Request $request, AlumnoRepository $alumnos): Response
     {
@@ -40,6 +42,7 @@ class AlumnoController extends Controller
      * @Route("/agregar", name="alumnos_new")
      * @param Request $request
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function new(Request $request): Response
     {
@@ -89,6 +92,7 @@ class AlumnoController extends Controller
      * @param Request $request
      * @param Alumno $alumno
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function delete(Request $request, Alumno $alumno): Response
     {
@@ -110,6 +114,7 @@ class AlumnoController extends Controller
      * @param Request $request
      * @param Alumno $alumno
      * @return Response
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function edit(Request $request, Alumno $alumno): Response
     {
@@ -140,6 +145,7 @@ class AlumnoController extends Controller
     /**
      * @Route("/pdf", name="pdf_alumnos")
      * @return Response
+     * @Security("has_role('ROLE_USER')")
      */
     public function pdf(): Response
     {

@@ -106,7 +106,7 @@ class Empresa
     private $correo;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="empresa")
+     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="empresa", cascade={"persist", "remove"})
      */
     private $fcts;
 

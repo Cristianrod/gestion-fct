@@ -149,7 +149,7 @@ class Profesor extends BaseUser
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="profesor")
+     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="profesor", cascade={"persist", "remove"})
      */
     private $fcts;
 

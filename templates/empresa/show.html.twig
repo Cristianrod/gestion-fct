@@ -30,7 +30,14 @@
         </ul>
         <ul class="list-group col-sm-12 mt-2">
             <li class="list-group-item text-light mb-0 bg-info font-weight-bold text-uppercase text-center"><h3 class="font-weight-bold"><i class="fas fa-book"></i> Fct</h3></li>
-            <li class="list-group-item"><span class="font-weight-bold">FCT: </span></li>
+            {% for fct in empresa.fcts %}
+                <li class="list-group-item"><span class="font-weight-bold">FCT: </span>
+                    <dl>Alumno: {{ fct.alumno.nombre }} {{ fct.alumno.apellido1 }} {{ fct.alumno.apellido2 }}</dl>
+                    <dl>Profesor: {{ fct.profesor.nombre }} {{ fct.profesor.apellido1 }} {{ fct.profesor.apellido2 }}</dl>
+                    <dl>Periodo: {{ fct.periodo }}</dl>
+                    <dl>Año: {{ fct.anio }}</dl>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 {% endblock %}

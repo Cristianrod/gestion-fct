@@ -162,7 +162,7 @@ class Alumno
     private $ciclo;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="alumno")
+     * @ORM\OneToMany(targetEntity="App\Entity\Fct", mappedBy="alumno", cascade={"persist", "remove"})
      */
     private $fcts;
 

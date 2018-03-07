@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Ciclo;
 use App\Entity\Fct;
 use App\Form\FctType;
 use App\Repository\FctRepository;
@@ -30,10 +31,18 @@ class FctController extends Controller
      */
     public function index(Request $request, FctRepository $fcts): Response
     {
+        $ciclos = $this->getDoctrine()->getRepository(Ciclo::class)->findAll();
         $pagina = $request->query->getInt('p', 1);
-        $fcts = $fcts->findByNombre($pagina);
+        $ciclo = $request->query->get('c');
+        if ($ciclo){
+            $fcts = $fcts->findByCiclo($pagina, $ciclo);
+        }
+        else{
+            $fcts = $fcts->findByNombre($pagina);
+        }
         return $this->render('fct/index.html.twig', [
             'fcts' => $fcts,
+            'ciclos' => $ciclos
         ]);
     }
 

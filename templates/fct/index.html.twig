@@ -17,6 +17,16 @@
             </h1>
         </div>
     </div>
+    <form class="form-inline mb-4" action="{{ path('fcts') }}" method="get">
+        <label class="my-1 mr-2" for="selectCiclos">Ciclos:</label>
+        <select class="custom-select my-1 mr-sm-2 form-control" id="selectCiclos" name="c">
+            <option selected value="">Todos</option>
+            {% for ciclo in ciclos %}
+                <option value="{{ ciclo.id }}">{{ ciclo.codigo }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary my-1">Buscar</button>
+    </form>
     <table class="table table-bordered table-hover">
         <thead>
         <tr class="text-center">

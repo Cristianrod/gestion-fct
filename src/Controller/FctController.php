@@ -154,4 +154,27 @@ class FctController extends Controller
             'listadofcts.pdf'
         );
     }
+
+    /**
+     * @Route("/email/{id}", name="fcts_email")
+     * @param Fct $fct
+     * @param \Swift_Mailer $mailer
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function email(Fct $fct, \Swift_Mailer $mailer)
+    {
+        $mensaje = (new \Swift_Message('FCT'))
+            ->setFrom('admin@mail.com')
+            ->setTo('profesres@mail.com')
+            ->setBody(
+                $this->renderView('fct/email.html.twig', [
+                    'fct' => $fct,
+                ]),
+                'text/html'
+            );
+
+        $mailer->send($mensaje);
+        $this->addFlash('success', 'flash.emailFCT');
+        return $this->redirectToRoute('fcts');
+    }
 }

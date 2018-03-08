@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}FCTs - Email{% endblock %}
+{% block header %}
+{% endblock %}
+{% block container %}
+    <h1 style="text-align: center;">FCT</h1>
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+        <thead>
+        <tr style="border: 1px solid black; border-collapse: collapse;" class="text-center">
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Alumno</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Empresa</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Profesor</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Ciclo</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Año</th>
+            <th style="border: 1px solid black; border-collapse: collapse;" scope="col">Periodo</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr style="border: 1px solid black; border-collapse: collapse; text-align: center;">
+                <th style="border: 1px solid black; border-collapse: collapse;" scope="row">{{ fct.alumno.nombre }} {{ fct.alumno.apellido1 }} {{ fct.alumno.apellido2 }}</th>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.empresa.nombre }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.profesor.nombre }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.ciclo.nombre }} ({{ fct.ciclo.codigo }})</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.anio }}</td>
+                <td style="border: 1px solid black; border-collapse: collapse;">{{ fct.periodo }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+{% block footer %}{% endblock %}

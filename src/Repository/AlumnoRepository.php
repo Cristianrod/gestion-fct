@@ -29,7 +29,7 @@ class AlumnoRepository extends ServiceEntityRepository
     public function paginacion(Query $query, int $pagina)
     {
         $paginacion = new Pagerfanta(new DoctrineORMAdapter($query));
-        $paginacion = $paginacion->setMaxPerPage(4);
+        $paginacion = $paginacion->setMaxPerPage(5);
         $paginacion = $paginacion->setCurrentPage($pagina);
 
         return $paginacion;

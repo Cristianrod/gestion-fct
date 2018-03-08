@@ -218,6 +218,10 @@
                 <source>flash.borrarF</source>
                 <target>FCT eliminada correctamente.</target>
             </trans-unit>
+            <trans-unit id="flash.emailFCT">
+                <source>flash.emailFCT</source>
+                <target>FCT enviada correctamente.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

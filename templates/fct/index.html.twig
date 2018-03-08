@@ -54,6 +54,7 @@
                         <td>
                             <a role="button" href="{{ path('fcts_edit', {'id': fct.id}) }}" class="btn btn-success text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-edit"></i></a>
                             <a role="button" href="{{ path('fcts_delete', {'id': fct.id}) }}" class="btn btn-danger text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-trash-alt"></i></a>
+                            <a role="button" href="{{ path('fcts_email', {'id': fct.id}) }}" class="btn btn-info text-light mb-1 mb-sm-1 mb-md-0"><i class="fas fa-envelope"></i></a>
                         </td>
                     {% endif %}
                 </tr>
